@@ -1,5 +1,6 @@
 package com.base.api.response.adresses;
 
+import com.base.api.model.address.Datum;
 import com.base.api.response.general.Response;
 import lombok.AccessLevel;
 import lombok.Data;

@@ -1,5 +1,6 @@
 package com.base.api.response.city;
 
+import com.base.api.model.city.Count;
 import com.base.api.response.general.Response;
 import lombok.AccessLevel;
 import lombok.Data;

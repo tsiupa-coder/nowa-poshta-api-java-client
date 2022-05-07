@@ -1,4 +1,4 @@
-package com.base.api.response.adresses;
+package com.base.api.model.address;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AccessLevel;

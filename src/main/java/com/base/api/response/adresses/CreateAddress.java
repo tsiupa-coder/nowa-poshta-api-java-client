@@ -1,6 +1,7 @@
 package com.base.api.response.adresses;
 
 
+import com.base.api.model.address.DataR;
 import com.base.api.response.general.Response;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;

@@ -1,4 +1,4 @@
-package com.base.api.response.city;
+package com.base.api.model.city;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AccessLevel;

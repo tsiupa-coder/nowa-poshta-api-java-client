@@ -1,4 +1,4 @@
-package com.base.api.response.city;
+package com.base.api.model.address;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AccessLevel;
@@ -9,9 +9,9 @@ import java.util.ArrayList;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Count {
+public class Datum {
     @SerializedName("TotalCount")
-    int totalCount;
+    public int totalCount;
     @SerializedName("Addresses")
-    ArrayList<City> addresses;
+    public ArrayList<Address> addresses;
 }
