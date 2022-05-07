@@ -34,18 +34,23 @@ public class Service {
      */
     public GetCity getCity(String city, Pagination pagination, String api_key) throws IOException {
 
-        Request request = new Request();
-        request.setApiKey(api_key);
-        request.setModelName("Address");
-        request.setCalledMethod("searchSettlements");
-        MethodProperties methodProperties = new MethodProperties();
-        methodProperties.setCityName(city);
-        methodProperties.setLimit(pagination.getLimit());
-        methodProperties.setPage(pagination.getPage());
-        request.setMethodProperties(methodProperties);
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "searchSettlements");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObjectIn.addProperty("CityName", city);
+        jsonObjectIn.addProperty("Limit", pagination.getLimit());
+        jsonObjectIn.addProperty("Page", pagination.getPage());
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+
 
         return http_helper
-                .postRequest(URL, request)
+                .postRequest(URL, jsonObject)
                 .getResponse(new GetCity());
     }
 
@@ -60,21 +65,24 @@ public class Service {
      */
     public GetAddresses getAddresses(String streetName, String settlementRef, Pagination pagination, String api_key) throws IOException {
 
-        Request request = new Request();
-        request.setApiKey(api_key);
-        request.setModelName("Address");
-        request.setCalledMethod("searchSettlementStreets");
 
-        MethodProperties methodProperties = new MethodProperties();
-        methodProperties.setStreetName(streetName);
-        methodProperties.setSettlementRef(settlementRef);
-        methodProperties.setLimit(pagination.getLimit());
-        methodProperties.setPage(pagination.getPage());
-        request.setMethodProperties(methodProperties);
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "searchSettlementStreets");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObjectIn.addProperty("StreetName", streetName);
+        jsonObjectIn.addProperty("SettlementRef", settlementRef);
+        jsonObjectIn.addProperty("Limit", pagination.getLimit());
+        jsonObjectIn.addProperty("Page", pagination.getPage());
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
 
 
         return http_helper
-                .postRequest(URL, request)
+                .postRequest(URL, jsonObject)
                 .getResponse(new GetAddresses());
     }
 

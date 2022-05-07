@@ -23,7 +23,7 @@ public class ServiceTest extends TestCase {
     }
 
     @Test
-    public void test_et_City() throws IOException {
+    public void test_get_City() throws IOException {
         Pagination pagination = new Pagination();
         pagination.setLimit(100);
         pagination.setPage(1);
