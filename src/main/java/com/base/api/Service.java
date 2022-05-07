@@ -7,6 +7,7 @@ import com.base.api.response.adresses.CreateAddress;
 import com.base.api.response.adresses.DeleteAddress;
 import com.base.api.response.adresses.GetAddresses;
 import com.base.api.model.address.SimpleAddress;
+import com.base.api.response.adresses.UpdateAddress;
 import com.base.api.response.city.GetCity;
 import com.google.gson.JsonObject;
 
@@ -55,6 +56,7 @@ public class Service {
     }
 
     /**
+     *  returns addresses by given parameters
      *
      * @param streetName - street's name, which u want find
      * @param settlementRef - it's reference, where is that street
@@ -88,6 +90,7 @@ public class Service {
 
     // TODO: 07.05.22 Need testing
     /**
+     *  create address
      *
      * @param address - object represents address
      * @param api_key - takes from nowa-poshta app
@@ -116,6 +119,16 @@ public class Service {
     }
 
 
+    // TODO: 07.05.22 need testing
+    /**
+     *
+     * delete address, that u created
+     *
+     * @param address_ref
+     * @param api_key - takes from nowa-poshta app
+     * @return
+     * @throws IOException
+     */
     public DeleteAddress deleteAddress(String address_ref, String api_key) throws IOException {
 
         JsonObject jsonObject = new JsonObject();
@@ -131,5 +144,34 @@ public class Service {
         return http_helper.postRequest(URL, jsonObject).getResponse(new DeleteAddress());
     }
 
+    // TODO: 07.05.22 need testing
+    /**
+     *  update your address
+     *
+     * @param address - representation of address
+     * @param api_key - takes from nowa-poshta app
+     * @return
+     * @throws IOException
+     */
+    public UpdateAddress updateAddress(SimpleAddress address, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "update");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObjectIn.addProperty("CounterpartyRef", address.getCounterpartyRef());
+        jsonObjectIn.addProperty("StreetRef", address.getStreetRef());
+        jsonObjectIn.addProperty("BuildingNumber", address.getBuildingNumber());
+        jsonObjectIn.addProperty("Flat", address.getFlat());
+        jsonObjectIn.addProperty("Note", address.getNote());
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new UpdateAddress());
+    }
 
 }
