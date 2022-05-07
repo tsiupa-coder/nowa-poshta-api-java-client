@@ -4,9 +4,8 @@ package com.base.api;
 import com.base.api.request.Pagination;
 import com.base.api.response.adresses.CreateAddress;
 import com.base.api.response.adresses.GetAddresses;
-import com.base.api.response.adresses.SimpleAddress;
+import com.base.api.model.address.SimpleAddress;
 import com.base.api.response.city.GetCity;
-import com.google.gson.Gson;
 import junit.framework.TestCase;
 import org.junit.Test;
 
