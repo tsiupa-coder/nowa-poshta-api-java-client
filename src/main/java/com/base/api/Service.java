@@ -2,6 +2,7 @@ package com.base.api;
 
 import com.base.api.model.city.CompanyCity;
 import com.base.api.model.settlement.SimpleSettlement;
+import com.base.api.model.street.SimpleStreet;
 import com.base.api.model.warehouse.SimpleWarehouse;
 import com.base.api.request.MethodProperties;
 import com.base.api.request.Pagination;
@@ -15,7 +16,9 @@ import com.base.api.response.adresses.GetSettlements;
 import com.base.api.response.adresses.UpdateAddress;
 import com.base.api.response.city.GetCity;
 import com.base.api.response.department.GetDepartment;
+import com.base.api.response.department.GetWarehouseTypes;
 import com.base.api.response.regions.GetRegions;
+import com.base.api.response.street.GetStreet;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.apache.http.client.utils.URIUtils;
@@ -270,4 +273,39 @@ public class Service {
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetDepartment());
     }
+
+
+    public GetWarehouseTypes getWarehouseTypes(String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "getWarehouseTypes");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new GetWarehouseTypes());
+    }
+
+    private GetStreet getStreet(SimpleStreet street, Pagination pagination, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "getStreet");
+
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(street);
+        jsonObjectIn.addProperty("Page", pagination.getPage());
+        jsonObjectIn.addProperty("Limit", pagination.getLimit());
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return http_helper.postRequest(URL, jsonObject).getResponse(new GetStreet());
+
+    }
+
+
 }
