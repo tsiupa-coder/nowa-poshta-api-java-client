@@ -2,6 +2,7 @@ package com.base.api;
 
 import com.base.api.model.city.CompanyCity;
 import com.base.api.model.settlement.SimpleSettlement;
+import com.base.api.model.warehouse.SimpleWarehouse;
 import com.base.api.request.MethodProperties;
 import com.base.api.request.Pagination;
 import com.base.api.request.Request;
@@ -13,9 +14,11 @@ import com.base.api.response.city.GetCompanyCities;
 import com.base.api.response.adresses.GetSettlements;
 import com.base.api.response.adresses.UpdateAddress;
 import com.base.api.response.city.GetCity;
+import com.base.api.response.department.GetDepartment;
 import com.base.api.response.regions.GetRegions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.apache.http.client.utils.URIUtils;
 
 import java.io.IOException;
 
@@ -198,8 +201,6 @@ public class Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        System.out.println(new Gson().toJson(jsonObject));
-
 
         return http_helper
                 .postRequest(URL, jsonObject)
@@ -224,6 +225,7 @@ public class Service {
         jsonObjectIn.addProperty("Page", pagination.getPage());
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
+        jsonObject.add("methodProperties", jsonObjectIn);
         return http_helper
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCompanyCities());
@@ -251,13 +253,21 @@ public class Service {
     }
 
 
-    public GetDepartment getDepartment(SimpleWarehouse warehouse, Pagination pagination, String api_key) {
+    public GetDepartment getDepartment(SimpleWarehouse warehouse, Pagination pagination, String api_key) throws IOException {
 
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("apiKey", api_key);
         jsonObject.addProperty("modelName", "Address");
         jsonObject.addProperty("calledMethod", "getWarehouses");
 
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(warehouse);
+        jsonObjectIn.addProperty("Page", pagination.getPage());
+        jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new GetDepartment());
     }
 }

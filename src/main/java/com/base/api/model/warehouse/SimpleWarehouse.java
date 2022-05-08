@@ -14,7 +14,4 @@ public class SimpleWarehouse {
     String Language;
     String TypeOfWarehouseRef;
     String WarehouseId;
-
-
-
 }
