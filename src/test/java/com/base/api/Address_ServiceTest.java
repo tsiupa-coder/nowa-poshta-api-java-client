@@ -12,15 +12,15 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class ServiceTest extends TestCase {
+public class Address_ServiceTest extends TestCase {
 
-    private Service service;
+    private Address_Service service;
 
     private final String API_KEY = "64db4746458023076ed38c878a0b398f";
 
     @Override
     public void setUp() throws Exception {
-        service = new Service();
+        service = new Address_Service();
     }
 
     @Test

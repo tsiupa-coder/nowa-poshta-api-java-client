@@ -19,15 +19,14 @@ import com.base.api.response.regions.GetRegions;
 import com.base.api.response.street.GetStreet;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import org.apache.http.client.utils.URIUtils;
 
 import java.io.IOException;
 
-public class Service {
+public class Address_Service {
 
     private HTTP_Service http_helper;
 
-    public Service() {
+    public Address_Service() {
         http_helper = new HTTP_Service();
     }
 
