@@ -1,5 +1,6 @@
 package com.base.api;
 
+import com.base.api.model.city.CompanyCity;
 import com.base.api.model.settlement.SimpleSettlement;
 import com.base.api.request.MethodProperties;
 import com.base.api.request.Pagination;
@@ -8,6 +9,7 @@ import com.base.api.response.adresses.CreateAddress;
 import com.base.api.response.adresses.DeleteAddress;
 import com.base.api.response.adresses.GetAddresses;
 import com.base.api.model.address.SimpleAddress;
+import com.base.api.response.city.GetCompanyCities;
 import com.base.api.response.adresses.GetSettlements;
 import com.base.api.response.adresses.UpdateAddress;
 import com.base.api.response.city.GetCity;
@@ -198,8 +200,23 @@ public class Service {
         System.out.println(new Gson().toJson(jsonObject));
 
 
-        return http_helper.postRequest(URL, jsonObject).getResponse(new GetSettlements());
-
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new GetSettlements());
     }
 
+    public GetCompanyCities getCompanyCity(CompanyCity city, Pagination pagination, String api_key) throws IOException {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "getCities");
+
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(city);
+        jsonObjectIn.addProperty("Page", pagination.getPage());
+        jsonObjectIn.addProperty("Limit", pagination.getLimit());
+
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new GetCompanyCities());
+    }
 }

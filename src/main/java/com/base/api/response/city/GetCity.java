@@ -14,12 +14,6 @@ public class GetCity extends Response {
     boolean success;
     ArrayList<Count> data;
     ArrayList<String> errors;
-    ArrayList<String> warnings;
-    ArrayList<String> info;
-    ArrayList<String> messageCodes;
-    ArrayList<String> errorCodes;
-    ArrayList<String> warningCodes;
-    ArrayList<String> infoCodes;
 }
 
 

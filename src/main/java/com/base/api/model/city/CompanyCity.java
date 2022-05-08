@@ -1,4 +1,4 @@
-package com.base.api.model.address;
+package com.base.api.model.city;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AccessLevel;
@@ -7,9 +7,9 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DataR {
+public class CompanyCity {
     @SerializedName("Ref")
     String ref;
-    @SerializedName("Description")
-    String description;
+    @SerializedName("FindByString")
+    String findByString;
 }
