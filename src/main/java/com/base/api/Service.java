@@ -239,7 +239,7 @@ public class Service {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("apiKey", api_key);
         jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getCities");
+        jsonObject.addProperty("calledMethod", "getAreas");
 
         JsonObject jsonObjectIn = new JsonObject();
         jsonObject.add("methodProperties", jsonObjectIn);
@@ -247,6 +247,17 @@ public class Service {
         return http_helper
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetRegions());
+
+    }
+
+
+    public GetDepartment getDepartment(SimpleWarehouse warehouse, Pagination pagination, String api_key) {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "getWarehouses");
+
 
     }
 }
