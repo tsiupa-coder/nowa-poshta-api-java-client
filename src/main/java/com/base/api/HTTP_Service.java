@@ -1,7 +1,7 @@
 package com.base.api;
 
 
-import com.base.api.response.general.GeneralResponse;
+import com.base.api.response.address.general.GeneralResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.http.HttpEntity;
