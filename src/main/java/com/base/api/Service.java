@@ -4,9 +4,7 @@ import com.base.api.model.city.CompanyCity;
 import com.base.api.model.settlement.SimpleSettlement;
 import com.base.api.model.street.SimpleStreet;
 import com.base.api.model.warehouse.SimpleWarehouse;
-import com.base.api.request.MethodProperties;
 import com.base.api.request.Pagination;
-import com.base.api.request.Request;
 import com.base.api.response.adresses.CreateAddress;
 import com.base.api.response.adresses.DeleteAddress;
 import com.base.api.response.adresses.GetAddresses;
@@ -111,22 +109,17 @@ public class Service {
      */
     public CreateAddress createAddress(SimpleAddress address, String api_key) throws IOException {
 
-        Request request = new Request();
-        request.setApiKey(api_key);
-        request.setModelName("Address");
-        request.setCalledMethod("save");
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "save");
 
-        MethodProperties methodProperties = new MethodProperties();
-        methodProperties.setCounterpartyRef(address.getCounterpartyRef());
-        methodProperties.setStreetRef(address.getStreetRef());
-        methodProperties.setBuildingNumber(address.getBuildingNumber());
-        methodProperties.setFlat(address.getFlat());
-        methodProperties.setNote(address.getNote());
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(address);
 
-        request.setMethodProperties(methodProperties);
+        jsonObject.add("methodProperties", jsonObjectIn);
 
         return http_helper
-                .postRequest(URL, request)
+                .postRequest(URL, jsonObject)
                 .getResponse(new CreateAddress());
     }
 

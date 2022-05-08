@@ -1,6 +1,6 @@
 package com.base.api;
 
-import com.base.api.request.Request;
+
 import com.base.api.response.general.GeneralResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
