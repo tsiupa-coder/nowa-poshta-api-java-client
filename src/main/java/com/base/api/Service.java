@@ -1,5 +1,6 @@
 package com.base.api;
 
+import com.base.api.model.settlement.SimpleSettlement;
 import com.base.api.request.MethodProperties;
 import com.base.api.request.Pagination;
 import com.base.api.request.Request;
@@ -7,8 +8,10 @@ import com.base.api.response.adresses.CreateAddress;
 import com.base.api.response.adresses.DeleteAddress;
 import com.base.api.response.adresses.GetAddresses;
 import com.base.api.model.address.SimpleAddress;
+import com.base.api.response.adresses.GetSettlements;
 import com.base.api.response.adresses.UpdateAddress;
 import com.base.api.response.city.GetCity;
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
@@ -160,18 +163,43 @@ public class Service {
         jsonObject.addProperty("modelName", "Address");
         jsonObject.addProperty("calledMethod", "update");
 
-        JsonObject jsonObjectIn = new JsonObject();
-        jsonObjectIn.addProperty("CounterpartyRef", address.getCounterpartyRef());
-        jsonObjectIn.addProperty("StreetRef", address.getStreetRef());
-        jsonObjectIn.addProperty("BuildingNumber", address.getBuildingNumber());
-        jsonObjectIn.addProperty("Flat", address.getFlat());
-        jsonObjectIn.addProperty("Note", address.getNote());
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(address);
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
         return http_helper
                 .postRequest(URL, jsonObject)
                 .getResponse(new UpdateAddress());
+    }
+
+
+    // TODO: 08.05.22 need testing
+    /**
+     *
+     * @param settlement - representation of settlement
+     * @param pagination - contains page and limit, if u understand me :)
+     * @param api_key - takes from nowa-poshta app
+     * @return
+     * @throws IOException
+     */
+    public GetSettlements findSettlement(SimpleSettlement settlement, Pagination pagination, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "getSettlements");
+
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(settlement);
+        jsonObjectIn.addProperty("Page", pagination.getPage());
+        jsonObjectIn.addProperty("Limit", pagination.getLimit());
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        System.out.println(new Gson().toJson(jsonObject));
+
+
+        return http_helper.postRequest(URL, jsonObject).getResponse(new GetSettlements());
+
     }
 
 }

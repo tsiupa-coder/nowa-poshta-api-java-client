@@ -1,6 +1,7 @@
 package com.base.api;
 
 
+import com.base.api.model.settlement.SimpleSettlement;
 import com.base.api.request.Pagination;
 import com.base.api.response.adresses.CreateAddress;
 import com.base.api.response.adresses.GetAddresses;
@@ -66,5 +67,13 @@ public class ServiceTest extends TestCase {
     }
 
 
+    public void test_findSettlement() throws IOException {
+        SimpleSettlement simpleSettlement = new SimpleSettlement();
+        simpleSettlement.setFindByString("vervevr");
+        simpleSettlement.setWarehouse("12234");
 
+        Pagination pagination = new Pagination();
+        pagination.setPage(1);
+        service.findSettlement(simpleSettlement, pagination, "test_api_key");
+    }
 }
