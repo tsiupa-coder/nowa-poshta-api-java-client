@@ -210,6 +210,7 @@ public class Service {
                 .getResponse(new GetSettlements());
     }
 
+    // TODO: 08.05.22 need testing
     /**
      *
      * @param city - representation company's city
