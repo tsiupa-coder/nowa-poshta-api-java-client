@@ -76,4 +76,12 @@ public class ServiceTest extends TestCase {
         pagination.setPage(1);
         service.findSettlement(simpleSettlement, pagination, "test_api_key");
     }
+
+
+    public void test_getRegions() throws IOException {
+
+        service.getRegions("test_api_key");
+
+
+    }
 }

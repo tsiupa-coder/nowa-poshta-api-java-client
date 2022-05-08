@@ -13,6 +13,7 @@ import com.base.api.response.city.GetCompanyCities;
 import com.base.api.response.adresses.GetSettlements;
 import com.base.api.response.adresses.UpdateAddress;
 import com.base.api.response.city.GetCity;
+import com.base.api.response.regions.GetRegions;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -205,6 +206,14 @@ public class Service {
                 .getResponse(new GetSettlements());
     }
 
+    /**
+     *
+     * @param city - representation company's city
+     * @param pagination - - contains page and limit, if u understand me :)
+     * @param api_key - - takes from nowa-poshta app
+     * @return
+     * @throws IOException
+     */
     public GetCompanyCities getCompanyCity(CompanyCity city, Pagination pagination, String api_key) throws IOException {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("apiKey", api_key);
@@ -218,5 +227,26 @@ public class Service {
         return http_helper
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCompanyCities());
+    }
+
+    /**
+     * @param api_key - takes from nowa-poshta app
+     * @return
+     * @throws IOException
+     */
+    public GetRegions getRegions(String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Address");
+        jsonObject.addProperty("calledMethod", "getCities");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new GetRegions());
+
     }
 }
