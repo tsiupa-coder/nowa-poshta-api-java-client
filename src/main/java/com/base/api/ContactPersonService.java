@@ -1,9 +1,7 @@
 package com.base.api;
 
-import com.base.api.model.contact.ContactPerson;
 import com.base.api.model.contact.PersonData;
 import com.base.api.model.contact.SimpleContactPerson;
-import com.base.api.response.common.GetTimeIntervals;
 import com.base.api.response.tracking.CreateContactPerson;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
