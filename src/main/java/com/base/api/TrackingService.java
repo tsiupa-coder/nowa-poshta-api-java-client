@@ -1,7 +1,6 @@
 package com.base.api;
 
 import com.base.api.model.tracking.SimpleDocumentTracking;
-import com.base.api.response.common.GetTimeIntervals;
 import com.base.api.response.tracking.GetStatusDocuments;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
