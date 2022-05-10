@@ -1,4 +1,4 @@
-package com.base.api.response.tracking;
+package com.base.api.response.contact;
 
 import com.base.api.model.common.CargoDescription;
 import com.base.api.model.contact.ContactPerson;
