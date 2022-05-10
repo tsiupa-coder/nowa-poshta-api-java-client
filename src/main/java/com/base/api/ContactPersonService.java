@@ -1,5 +1,7 @@
 package com.base.api;
 
+import com.base.api.model.contact.ContactPerson;
+import com.base.api.model.contact.PersonData;
 import com.base.api.model.contact.SimpleContactPerson;
 import com.base.api.response.common.GetTimeIntervals;
 import com.base.api.response.tracking.CreateContactPerson;
@@ -32,6 +34,25 @@ public class ContactPersonService {
         return http_helper
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateContactPerson());
+
+    }
+
+    public CreateContactPerson update(PersonData person, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "ContactPerson");
+        jsonObject.addProperty("calledMethod", "update");
+
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(person);
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return http_helper
+                .postRequest(URL, jsonObject)
+                .getResponse(new CreateContactPerson());
+
+
 
     }
 }
