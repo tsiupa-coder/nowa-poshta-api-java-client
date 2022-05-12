@@ -1,7 +1,9 @@
 package com.base.api;
 
+import com.base.api.model.counterparty.SimpleCounterpartyOrganization;
 import com.base.api.model.counterparty.SimpleCounterpartyPrivatePerson;
 import com.base.api.model.counterparty.SimpleCounterpartyThirdPerson;
+import com.base.api.response.counterparty.CreateCounterpartyOrganization;
 import com.base.api.response.counterparty.CreateCounterpartyPrivatePerson;
 import com.base.api.response.counterparty.CreateCounterpartyThirdPerson;
 import com.google.gson.Gson;
@@ -60,4 +62,21 @@ public class CounterpartyService {
         return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyThirdPerson());
     }
 
+    public CreateCounterpartyOrganization createCounterparty(SimpleCounterpartyOrganization counterparty, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Counterparty");
+        jsonObject.addProperty("calledMethod", "save");
+
+        counterparty.setCounterpartyType("Organization");
+        counterparty.setCounterpartyProperty("Recipient");
+
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyOrganization());
+
+    }
 }
