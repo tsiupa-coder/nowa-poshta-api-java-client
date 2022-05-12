@@ -18,6 +18,9 @@ public class CounterpartyService {
     }
 
 
+    /**
+     *  Даний метод дозволяє створювати Контрагентів отримувачів з типом Приватна особа.
+     */
     public CreateCounterparty createCounterparty(SimpleCounterparty counterparty, String api_key) throws IOException {
 
         JsonObject jsonObject = new JsonObject();
