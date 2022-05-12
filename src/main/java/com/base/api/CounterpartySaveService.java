@@ -11,13 +11,13 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class CounterpartyService {
+public class CounterpartySaveService {
 
     private HTTP_Service service;
 
     private static final String URL = "https://api.novaposhta.ua/v2.0/json/";
 
-    public CounterpartyService() {
+    public CounterpartySaveService() {
         service = new HTTP_Service();
     }
 
