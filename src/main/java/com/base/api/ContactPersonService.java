@@ -9,15 +9,8 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class ContactPersonService {
+public class ContactPersonService extends Service{
 
-    private HTTP_Service http_helper;
-
-    public ContactPersonService() {
-        http_helper = new HTTP_Service();
-    }
-
-    private static final String URL = "https://api.novaposhta.ua/v2.0/json/";
 
     public CreateContactPerson create(SimpleContactPerson person, String api_key) throws IOException {
 
@@ -30,7 +23,7 @@ public class ContactPersonService {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateContactPerson());
 
@@ -47,7 +40,7 @@ public class ContactPersonService {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateContactPerson());
 
@@ -65,7 +58,7 @@ public class ContactPersonService {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new DeleteContactPerson());
 

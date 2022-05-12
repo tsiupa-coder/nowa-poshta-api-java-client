@@ -15,6 +15,7 @@ import com.base.api.response.address.adresses.UpdateAddress;
 import com.base.api.response.address.city.GetCity;
 import com.base.api.response.address.department.GetDepartment;
 import com.base.api.response.address.department.GetWarehouseTypes;
+import com.base.api.response.address.general.Response;
 import com.base.api.response.address.regions.GetRegions;
 import com.base.api.response.address.street.GetStreet;
 import com.google.gson.Gson;
@@ -22,15 +23,8 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class Address_Service {
+public class Address_Service extends Service {
 
-    private HTTP_Service http_helper;
-
-    public Address_Service() {
-        http_helper = new HTTP_Service();
-    }
-
-    private static final String URL = "https://api.novaposhta.ua/v2.0/json/";
 
 
     /**
@@ -59,7 +53,7 @@ public class Address_Service {
 
 
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCity());
     }
@@ -92,7 +86,7 @@ public class Address_Service {
 
 
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetAddresses());
     }
@@ -117,7 +111,7 @@ public class Address_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateAddress());
     }
@@ -145,7 +139,7 @@ public class Address_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper.postRequest(URL, jsonObject).getResponse(new DeleteAddress());
+        return service.postRequest(URL, jsonObject).getResponse(new DeleteAddress());
     }
 
     // TODO: 07.05.22 need testing
@@ -168,7 +162,7 @@ public class Address_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new UpdateAddress());
     }
@@ -197,7 +191,7 @@ public class Address_Service {
         jsonObject.add("methodProperties", jsonObjectIn);
 
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetSettlements());
     }
@@ -222,7 +216,7 @@ public class Address_Service {
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
         jsonObject.add("methodProperties", jsonObjectIn);
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCompanyCities());
     }
@@ -242,7 +236,7 @@ public class Address_Service {
         JsonObject jsonObjectIn = new JsonObject();
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetRegions());
 
@@ -262,7 +256,7 @@ public class Address_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetDepartment());
     }
@@ -278,7 +272,7 @@ public class Address_Service {
         JsonObject jsonObjectIn = new JsonObject();
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetWarehouseTypes());
     }
@@ -296,7 +290,7 @@ public class Address_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper.postRequest(URL, jsonObject).getResponse(new GetStreet());
+        return service.postRequest(URL, jsonObject).getResponse(new GetStreet());
 
     }
 

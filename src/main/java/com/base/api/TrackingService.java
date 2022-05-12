@@ -7,14 +7,7 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class TrackingService {
-    private HTTP_Service http_helper;
-
-    public TrackingService() {
-        http_helper = new HTTP_Service();
-    }
-
-    private static final String URL = "https://api.novaposhta.ua/v2.0/json/";
+public class TrackingService extends Service {
 
 
     // TODO: 09.05.22 need testing
@@ -29,7 +22,7 @@ public class TrackingService {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetStatusDocuments());
 

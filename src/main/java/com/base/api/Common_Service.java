@@ -18,14 +18,7 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class Common_Service {
-    private HTTP_Service http_helper;
-
-    public Common_Service() {
-        http_helper = new HTTP_Service();
-    }
-
-    private static final String URL = "https://api.novaposhta.ua/v2.0/json/";
+public class Common_Service extends Service{
 
     // TODO: 08.05.22 need testing
     public GetTimeIntervals getTimeIntervals(SimpleTimeInterval timeInterval, String api_key) throws IOException {
@@ -39,7 +32,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetTimeIntervals());
     }
@@ -57,7 +50,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCargoTypes());
     }
@@ -73,7 +66,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCargoTypes());
     }
@@ -90,7 +83,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetPalletsList());
     }
@@ -106,7 +99,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetTypesOfPayersForRedelivery());
     }
@@ -122,7 +115,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetPackList());
     }
@@ -138,7 +131,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetTiresWheelsList());
     }
@@ -156,7 +149,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCargoDescriptionList());
     }
@@ -172,7 +165,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetMessageCodeText());
     }
@@ -190,7 +183,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetServiceTypes());
     }
@@ -206,7 +199,7 @@ public class Common_Service {
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return http_helper
+        return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetOwnershipFormsList());
 

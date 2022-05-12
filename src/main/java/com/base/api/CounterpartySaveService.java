@@ -3,6 +3,7 @@ package com.base.api;
 import com.base.api.model.counterparty.save.SimpleCounterpartyOrganization;
 import com.base.api.model.counterparty.save.SimpleCounterpartyPrivatePerson;
 import com.base.api.model.counterparty.save.SimpleCounterpartyThirdPerson;
+import com.base.api.response.address.general.Response;
 import com.base.api.response.counterparty.CreateCounterpartyOrganization;
 import com.base.api.response.counterparty.CreateCounterpartyPrivatePerson;
 import com.base.api.response.counterparty.CreateCounterpartyThirdPerson;
@@ -11,15 +12,7 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class CounterpartySaveService {
-
-    private HTTP_Service service;
-
-    private static final String URL = "https://api.novaposhta.ua/v2.0/json/";
-
-    public CounterpartySaveService() {
-        service = new HTTP_Service();
-    }
+public class CounterpartySaveService extends Service {
 
 
     /**
