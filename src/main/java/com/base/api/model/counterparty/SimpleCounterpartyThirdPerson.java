@@ -8,25 +8,25 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Counterparty extends Response {
+public class SimpleCounterpartyThirdPerson extends Response {
 
-    @SerializedName("Ref")
-    String ref;
-    @SerializedName("Description")
-    String description;
     @SerializedName("FirstName")
     String firstName;
     @SerializedName("MiddleName")
     String middleName;
     @SerializedName("LastName")
     String lastName;
-    @SerializedName("Counterparty")
-    String counterparty;
-    @SerializedName("OwnershipForm")
-    String ownershipForm;
+    @SerializedName("Phone")
+    String phone;
+    @SerializedName("Email")
+    String email;
     @SerializedName("CounterpartyType")
     String counterpartyType;
+    @SerializedName("CounterpartyProperty")
+    String counterpartyProperty;
     @SerializedName("EDRPOU")
-    String EDRPOU;
+    String eDRPOU;
+    @SerializedName("CityRef")
+    String cityRef;
 
 }

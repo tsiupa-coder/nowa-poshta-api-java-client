@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SimpleCounterparty extends Response {
+public class SimpleCounterpartyPrivatePerson extends Response {
 
     @SerializedName("FirstName")
     String firstName;

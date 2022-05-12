@@ -1,7 +1,9 @@
 package com.base.api;
 
-import com.base.api.model.counterparty.SimpleCounterparty;
-import com.base.api.response.counterparty.CreateCounterparty;
+import com.base.api.model.counterparty.SimpleCounterpartyPrivatePerson;
+import com.base.api.model.counterparty.SimpleCounterpartyThirdPerson;
+import com.base.api.response.counterparty.CreateCounterpartyPrivatePerson;
+import com.base.api.response.counterparty.CreateCounterpartyThirdPerson;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -21,19 +23,41 @@ public class CounterpartyService {
     /**
      *  Даний метод дозволяє створювати Контрагентів отримувачів з типом Приватна особа.
      */
-    public CreateCounterparty createCounterparty(SimpleCounterparty counterparty, String api_key) throws IOException {
+    public CreateCounterpartyPrivatePerson createCounterparty(SimpleCounterpartyPrivatePerson counterparty, String api_key) throws IOException {
 
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("apiKey", api_key);
         jsonObject.addProperty("modelName", "Counterparty");
         jsonObject.addProperty("calledMethod", "save");
 
+        counterparty.setCounterpartyType("PrivatePerson");
+        counterparty.setCounterpartyProperty("Recipient");
+
         JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
 
         jsonObject.add("methodProperties", jsonObjectIn);
 
-        return service.postRequest(URL, jsonObject).getResponse(new CreateCounterparty());
-
+        return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyPrivatePerson());
 
     }
+
+    /**
+     * Даний метод дозволяє створювати Контрагентів отримувачів з типом Третя особа.
+     */
+    public CreateCounterpartyThirdPerson createCounterparty(SimpleCounterpartyThirdPerson counterparty, String api_key) throws IOException {
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Counterparty");
+        jsonObject.addProperty("calledMethod", "save");
+
+        counterparty.setCounterpartyType("ThirdPerson");
+        counterparty.setCounterpartyProperty("Organization");
+
+        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyThirdPerson());
+    }
+
 }
