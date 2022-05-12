@@ -1,8 +1,8 @@
 package com.base.api;
 
-import com.base.api.model.counterparty.SimpleCounterpartyOrganization;
-import com.base.api.model.counterparty.SimpleCounterpartyPrivatePerson;
-import com.base.api.model.counterparty.SimpleCounterpartyThirdPerson;
+import com.base.api.model.counterparty.save.SimpleCounterpartyOrganization;
+import com.base.api.model.counterparty.save.SimpleCounterpartyPrivatePerson;
+import com.base.api.model.counterparty.save.SimpleCounterpartyThirdPerson;
 import com.base.api.response.counterparty.CreateCounterpartyOrganization;
 import com.base.api.response.counterparty.CreateCounterpartyPrivatePerson;
 import com.base.api.response.counterparty.CreateCounterpartyThirdPerson;

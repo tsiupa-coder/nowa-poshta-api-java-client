@@ -1,7 +1,6 @@
 package com.base.api.response.counterparty;
 
-import com.base.api.model.counterparty.CounterpartyOrganization;
-import com.base.api.model.counterparty.CounterpartyPrivatePerson;
+import com.base.api.model.counterparty.save.CounterpartyOrganization;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;
 import lombok.Data;

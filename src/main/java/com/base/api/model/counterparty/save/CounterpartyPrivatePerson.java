@@ -1,4 +1,4 @@
-package com.base.api.model.counterparty;
+package com.base.api.model.counterparty.save;
 
 import com.base.api.response.address.general.Response;
 import com.google.gson.annotations.SerializedName;
@@ -8,21 +8,25 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class SimpleCounterpartyPrivatePerson extends Response {
+public class CounterpartyPrivatePerson extends Response {
 
+    @SerializedName("Ref")
+    String ref;
+    @SerializedName("Description")
+    String description;
     @SerializedName("FirstName")
     String firstName;
     @SerializedName("MiddleName")
     String middleName;
     @SerializedName("LastName")
     String lastName;
-    @SerializedName("Phone")
-    String phone;
-    @SerializedName("Email")
-    String email;
+    @SerializedName("Counterparty")
+    String counterparty;
+    @SerializedName("OwnershipForm")
+    String ownershipForm;
     @SerializedName("CounterpartyType")
     String counterpartyType;
-    @SerializedName("CounterpartyProperty")
-    String counterpartyProperty;
+    @SerializedName("EDRPOU")
+    String EDRPOU;
 
 }
