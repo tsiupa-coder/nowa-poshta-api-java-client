@@ -3,10 +3,10 @@ package com.base.api;
 
 import com.base.api.model.addresses.settlement.SimpleSettlement;
 import com.base.api.request.Pagination;
-import com.base.api.response.address.adresses.CreateAddress;
-import com.base.api.response.address.adresses.GetAddresses;
+import com.base.api.response.info.address.adresses.CreateAddress;
+import com.base.api.response.info.address.adresses.GetAddresses;
 import com.base.api.model.addresses.address.SimpleAddress;
-import com.base.api.response.address.city.GetCity;
+import com.base.api.response.info.address.city.GetCity;
 import junit.framework.TestCase;
 import org.junit.Test;
 

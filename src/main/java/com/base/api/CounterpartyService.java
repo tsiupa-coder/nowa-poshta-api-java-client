@@ -1,12 +1,12 @@
 package com.base.api;
 
 import com.base.api.model.counterparty.update.SimpleCounterparty;
-import com.base.api.response.counterparty.other.GetCounterparties;
-import com.base.api.response.counterparty.other.GetCounterpartyAddresses;
-import com.base.api.response.counterparty.other.GetCounterpartyContactPersons;
-import com.base.api.response.counterparty.other.GetCounterpartyOptions;
-import com.base.api.response.counterparty.updata.DeleteCounterparty;
-import com.base.api.response.counterparty.updata.UpdateCounterparty;
+import com.base.api.response.info.counterparty.other.GetCounterparties;
+import com.base.api.response.info.counterparty.other.GetCounterpartyAddresses;
+import com.base.api.response.info.counterparty.other.GetCounterpartyContactPersons;
+import com.base.api.response.info.counterparty.other.GetCounterpartyOptions;
+import com.base.api.response.info.counterparty.updata.DeleteCounterparty;
+import com.base.api.response.info.counterparty.updata.UpdateCounterparty;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 

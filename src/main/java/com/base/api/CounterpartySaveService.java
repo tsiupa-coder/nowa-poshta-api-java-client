@@ -3,9 +3,9 @@ package com.base.api;
 import com.base.api.model.counterparty.save.SimpleCounterpartyOrganization;
 import com.base.api.model.counterparty.save.SimpleCounterpartyPrivatePerson;
 import com.base.api.model.counterparty.save.SimpleCounterpartyThirdPerson;
-import com.base.api.response.counterparty.save.CreateCounterpartyOrganization;
-import com.base.api.response.counterparty.save.CreateCounterpartyPrivatePerson;
-import com.base.api.response.counterparty.save.CreateCounterpartyThirdPerson;
+import com.base.api.response.info.counterparty.save.CreateCounterpartyOrganization;
+import com.base.api.response.info.counterparty.save.CreateCounterpartyPrivatePerson;
+import com.base.api.response.info.counterparty.save.CreateCounterpartyThirdPerson;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
