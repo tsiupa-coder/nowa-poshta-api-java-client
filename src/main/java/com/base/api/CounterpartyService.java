@@ -1,6 +1,7 @@
 package com.base.api;
 
 import com.base.api.model.counterparty.update.SimpleCounterparty;
+import com.base.api.response.counterparty.other.GetCounterparties;
 import com.base.api.response.counterparty.other.GetCounterpartyAddresses;
 import com.base.api.response.counterparty.other.GetCounterpartyContactPersons;
 import com.base.api.response.counterparty.other.GetCounterpartyOptions;
@@ -88,6 +89,25 @@ public class CounterpartyService extends Service{
         jsonObject.add("methodProperties", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetCounterpartyContactPersons());
+
+    }
+
+    public GetCounterparties getCounterparties(String counterpartyProperty, String page, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Counterparty");
+        jsonObject.addProperty("calledMethod", "getCounterpartyContactPersons");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObjectIn.addProperty("CounterpartyProperty", counterpartyProperty);
+        jsonObject.addProperty("Page", page);
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return service.postRequest(URL, jsonObject).getResponse(new GetCounterparties());
+
+
 
     }
 }
