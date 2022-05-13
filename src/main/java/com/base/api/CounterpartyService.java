@@ -1,6 +1,7 @@
 package com.base.api;
 
 import com.base.api.model.counterparty.update.SimpleCounterparty;
+import com.base.api.response.counterparty.updata.DeleteCounterparty;
 import com.base.api.response.counterparty.updata.UpdateCounterparty;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -21,6 +22,22 @@ public class CounterpartyService extends Service{
         jsonObject.add("methodProperties", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new UpdateCounterparty());
+    }
+
+    public DeleteCounterparty deleteCounterparty(String ref, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Counterparty");
+        jsonObject.addProperty("calledMethod", "delete");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObjectIn.addProperty("Ref", ref);
+
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return service.postRequest(URL, jsonObject).getResponse(new DeleteCounterparty());
+
     }
 
 }
