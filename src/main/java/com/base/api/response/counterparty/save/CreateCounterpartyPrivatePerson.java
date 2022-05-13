@@ -1,6 +1,6 @@
-package com.base.api.response.counterparty;
+package com.base.api.response.counterparty.save;
 
-import com.base.api.model.counterparty.save.CounterpartyThirdPerson;
+import com.base.api.model.counterparty.save.CounterpartyPrivatePerson;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;
 import lombok.Data;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CreateCounterpartyThirdPerson extends Response {
+public class CreateCounterpartyPrivatePerson extends Response {
     boolean success;
-    ArrayList<CounterpartyThirdPerson> data;
+    ArrayList<CounterpartyPrivatePerson> data;
     ArrayList<String> errors;
 }

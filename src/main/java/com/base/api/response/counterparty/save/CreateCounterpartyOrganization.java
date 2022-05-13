@@ -1,4 +1,4 @@
-package com.base.api.response.counterparty;
+package com.base.api.response.counterparty.save;
 
 import com.base.api.model.counterparty.save.CounterpartyOrganization;
 import com.base.api.response.address.general.Response;
