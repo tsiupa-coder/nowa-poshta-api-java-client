@@ -97,7 +97,7 @@ public class CounterpartyService extends Service{
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("apiKey", api_key);
         jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "getCounterpartyContactPersons");
+        jsonObject.addProperty("calledMethod", "getCounterparties");
 
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("CounterpartyProperty", counterpartyProperty);
