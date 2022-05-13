@@ -1,6 +1,7 @@
 package com.base.api;
 
 import com.base.api.model.counterparty.update.SimpleCounterparty;
+import com.base.api.response.counterparty.other.GetCounterpartyAddresses;
 import com.base.api.response.counterparty.updata.DeleteCounterparty;
 import com.base.api.response.counterparty.updata.UpdateCounterparty;
 import com.google.gson.Gson;
@@ -37,6 +38,22 @@ public class CounterpartyService extends Service{
         jsonObject.add("methodProperties", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new DeleteCounterparty());
+
+    }
+
+    public GetCounterpartyAddresses getCounterpartyAddresses(String ref, String counterpartyProperty, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("apiKey", api_key);
+        jsonObject.addProperty("modelName", "Counterparty");
+        jsonObject.addProperty("calledMethod", "getCounterpartyAddresses");
+
+        JsonObject jsonObjectIn = new JsonObject();
+        jsonObjectIn.addProperty("Ref", ref);
+        jsonObjectIn.addProperty("CounterpartyProperty", counterpartyProperty);
+        jsonObject.add("methodProperties", jsonObjectIn);
+
+        return service.postRequest(URL, jsonObject).getResponse(new GetCounterpartyAddresses());
 
     }
 
