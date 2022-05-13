@@ -3,7 +3,6 @@ package com.base.api;
 import com.base.api.model.counterparty.save.SimpleCounterpartyOrganization;
 import com.base.api.model.counterparty.save.SimpleCounterpartyPrivatePerson;
 import com.base.api.model.counterparty.save.SimpleCounterpartyThirdPerson;
-import com.base.api.response.address.general.Response;
 import com.base.api.response.counterparty.CreateCounterpartyOrganization;
 import com.base.api.response.counterparty.CreateCounterpartyPrivatePerson;
 import com.base.api.response.counterparty.CreateCounterpartyThirdPerson;
@@ -16,7 +15,7 @@ public class CounterpartySaveService extends Service {
 
 
     /**
-     *  Даний метод дозволяє створювати Контрагентів отримувачів з типом Приватна особа.
+     * Даний метод дозволяє створювати Контрагентів отримувачів з типом Приватна особа.
      */
     public CreateCounterpartyPrivatePerson createCounterparty(SimpleCounterpartyPrivatePerson counterparty, String api_key) throws IOException {
 

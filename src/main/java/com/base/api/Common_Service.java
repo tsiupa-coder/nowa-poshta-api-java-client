@@ -18,7 +18,7 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class Common_Service extends Service{
+public class Common_Service extends Service {
 
     // TODO: 08.05.22 need testing
     public GetTimeIntervals getTimeIntervals(SimpleTimeInterval timeInterval, String api_key) throws IOException {
@@ -54,6 +54,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCargoTypes());
     }
+
     // TODO: 08.05.22 need testing
     public GetCargoTypes getBackwardDeliveryCargoTypes(String api_key) throws IOException {
 
@@ -70,6 +71,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCargoTypes());
     }
+
     // TODO: 08.05.22 need testing
     public GetPalletsList getPalletsList(String api_key) throws IOException {
 
@@ -87,6 +89,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetPalletsList());
     }
+
     // TODO: 08.05.22 need testing
     public GetTypesOfPayersForRedelivery getTypesOfPayersForRedelivery(String api_key) throws IOException {
 
@@ -103,6 +106,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetTypesOfPayersForRedelivery());
     }
+
     // TODO: 08.05.22 need testing
     public GetPackList getPackList(SimplePack pack, String api_key) throws IOException {
 
@@ -119,6 +123,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetPackList());
     }
+
     // TODO: 08.05.22 need testing
     public GetTiresWheelsList getTiresWheelsList(String api_key) throws IOException {
 
@@ -135,6 +140,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetTiresWheelsList());
     }
+
     // TODO: 08.05.22 need testing
     public GetCargoDescriptionList getCargoDescriptionList(String findByString, Pagination pagination, String api_key) throws IOException {
 
@@ -153,6 +159,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCargoDescriptionList());
     }
+
     // TODO: 08.05.22 need testing
     public GetMessageCodeText getMessageCodeText(String api_key) throws IOException {
 
@@ -187,6 +194,7 @@ public class Common_Service extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetServiceTypes());
     }
+
     // TODO: 08.05.22 need testing
     public GetOwnershipFormsList getOwnershipFormsList(String api_key) throws IOException {
 

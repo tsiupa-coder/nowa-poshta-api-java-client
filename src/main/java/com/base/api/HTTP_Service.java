@@ -90,7 +90,7 @@ class HTTP_Service {
         return generalResponse;
     }
 
-    private RequestConfig getRequestConfig () {
+    private RequestConfig getRequestConfig() {
 
         RequestConfig config = RequestConfig.custom()
                 .setConnectTimeout(timeout * 1000)

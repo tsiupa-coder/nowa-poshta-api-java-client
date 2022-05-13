@@ -1,6 +1,5 @@
 package com.base.api.response.common;
 
-import com.base.api.model.common.CargoDescription;
 import com.base.api.model.common.MessageCodeText;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;

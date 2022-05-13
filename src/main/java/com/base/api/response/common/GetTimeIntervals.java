@@ -1,6 +1,5 @@
 package com.base.api.response.common;
 
-import com.base.api.model.addresses.address.DataR;
 import com.base.api.model.common.TimeInterval;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;

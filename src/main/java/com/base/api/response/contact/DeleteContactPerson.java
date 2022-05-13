@@ -1,6 +1,5 @@
 package com.base.api.response.contact;
 
-import com.base.api.model.contact.ContactPerson;
 import com.base.api.model.contact.Reference;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;

@@ -1,7 +1,6 @@
 package com.base.api.response.common;
 
 import com.base.api.model.common.PackList;
-import com.base.api.model.common.PalletsList;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;
 import lombok.Data;

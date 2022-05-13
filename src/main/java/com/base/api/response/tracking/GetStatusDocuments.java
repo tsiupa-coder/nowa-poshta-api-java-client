@@ -1,6 +1,5 @@
 package com.base.api.response.tracking;
 
-import com.base.api.model.common.CargoDescription;
 import com.base.api.model.tracking.StatusDocument;
 import com.base.api.response.address.general.Response;
 import lombok.AccessLevel;

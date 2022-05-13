@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import lombok.Data;
 
-
 import java.util.Objects;
 
 @Data

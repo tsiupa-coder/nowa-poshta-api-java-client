@@ -1,7 +1,5 @@
 package com.base.api;
 
-import com.google.gson.JsonObject;
-
 public class Service {
 
     protected HTTP_Service service;

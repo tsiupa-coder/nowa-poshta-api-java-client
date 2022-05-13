@@ -27,6 +27,5 @@ public class TrackingService extends Service {
                 .getResponse(new GetStatusDocuments());
 
 
-
     }
 }

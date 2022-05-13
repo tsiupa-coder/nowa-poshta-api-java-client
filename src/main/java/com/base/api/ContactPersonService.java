@@ -9,7 +9,7 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class ContactPersonService extends Service{
+public class ContactPersonService extends Service {
 
 
     public CreateContactPerson create(SimpleContactPerson person, String api_key) throws IOException {
@@ -61,7 +61,6 @@ public class ContactPersonService extends Service{
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new DeleteContactPerson());
-
 
 
     }

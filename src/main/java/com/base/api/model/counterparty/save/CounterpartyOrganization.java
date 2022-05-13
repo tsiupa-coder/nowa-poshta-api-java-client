@@ -8,7 +8,7 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CounterpartyOrganization  extends Response {
+public class CounterpartyOrganization extends Response {
 
     @SerializedName("Ref")
     String ref;

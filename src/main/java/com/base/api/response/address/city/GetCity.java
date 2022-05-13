@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 import java.util.ArrayList;
 
 @Data
-@FieldDefaults(level= AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetCity extends Response {
     boolean success;
     ArrayList<Count> data;

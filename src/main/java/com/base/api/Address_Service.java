@@ -1,5 +1,6 @@
 package com.base.api;
 
+import com.base.api.model.addresses.address.SimpleAddress;
 import com.base.api.model.addresses.city.CompanyCity;
 import com.base.api.model.addresses.settlement.SimpleSettlement;
 import com.base.api.model.addresses.street.SimpleStreet;
@@ -8,14 +9,12 @@ import com.base.api.request.Pagination;
 import com.base.api.response.address.adresses.CreateAddress;
 import com.base.api.response.address.adresses.DeleteAddress;
 import com.base.api.response.address.adresses.GetAddresses;
-import com.base.api.model.addresses.address.SimpleAddress;
-import com.base.api.response.address.city.GetCompanyCities;
 import com.base.api.response.address.adresses.GetSettlements;
 import com.base.api.response.address.adresses.UpdateAddress;
 import com.base.api.response.address.city.GetCity;
+import com.base.api.response.address.city.GetCompanyCities;
 import com.base.api.response.address.department.GetDepartment;
 import com.base.api.response.address.department.GetWarehouseTypes;
-import com.base.api.response.address.general.Response;
 import com.base.api.response.address.regions.GetRegions;
 import com.base.api.response.address.street.GetStreet;
 import com.google.gson.Gson;
@@ -26,13 +25,12 @@ import java.io.IOException;
 public class Address_Service extends Service {
 
 
-
     /**
-     *  returns cities by given parameters
+     * returns cities by given parameters
      *
-     * @param  city - city's name
+     * @param city       - city's name
      * @param pagination - contains page and limit, if u understand me :)
-     * @param api_key - takes from nowa-poshta app
+     * @param api_key    - takes from nowa-poshta app
      * @return - GetCity, represents endpoint response
      * @throws IOException
      */
@@ -52,19 +50,18 @@ public class Address_Service extends Service {
         jsonObject.add("methodProperties", jsonObjectIn);
 
 
-
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCity());
     }
 
     /**
-     *  returns addresses by given parameters
+     * returns addresses by given parameters
      *
-     * @param streetName - street's name, which u want find
+     * @param streetName    - street's name, which u want find
      * @param settlementRef - it's reference, where is that street
-     * @param pagination - contains page and limit, if u understand me :)
-     * @param api_key -  takes from nowa-poshta app
+     * @param pagination    - contains page and limit, if u understand me :)
+     * @param api_key       -  takes from nowa-poshta app
      * @return - GetAddresses, represents api response
      * @throws IOException
      */
@@ -85,15 +82,15 @@ public class Address_Service extends Service {
         jsonObject.add("methodProperties", jsonObjectIn);
 
 
-
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetAddresses());
     }
 
     // TODO: 07.05.22 Need testing
+
     /**
-     *  create address
+     * create address
      *
      * @param address - object represents address
      * @param api_key - takes from nowa-poshta app
@@ -118,12 +115,12 @@ public class Address_Service extends Service {
 
 
     // TODO: 07.05.22 need testing
+
     /**
-     *
      * delete address, that u created
      *
      * @param address_ref
-     * @param api_key - takes from nowa-poshta app
+     * @param api_key     - takes from nowa-poshta app
      * @return
      * @throws IOException
      */
@@ -143,8 +140,9 @@ public class Address_Service extends Service {
     }
 
     // TODO: 07.05.22 need testing
+
     /**
-     *  update your address
+     * update your address
      *
      * @param address - representation of address
      * @param api_key - takes from nowa-poshta app
@@ -169,11 +167,11 @@ public class Address_Service extends Service {
 
 
     // TODO: 08.05.22 need testing
+
     /**
-     *
      * @param settlement - representation of settlement
      * @param pagination - contains page and limit, if u understand me :)
-     * @param api_key - takes from nowa-poshta app
+     * @param api_key    - takes from nowa-poshta app
      * @return
      * @throws IOException
      */
@@ -197,11 +195,11 @@ public class Address_Service extends Service {
     }
 
     // TODO: 08.05.22 need testing
+
     /**
-     *
-     * @param city - representation company's city
+     * @param city       - representation company's city
      * @param pagination - - contains page and limit, if u understand me :)
-     * @param api_key - - takes from nowa-poshta app
+     * @param api_key    - - takes from nowa-poshta app
      * @return
      * @throws IOException
      */
