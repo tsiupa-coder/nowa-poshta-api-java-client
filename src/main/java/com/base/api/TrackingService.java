@@ -13,14 +13,7 @@ public class TrackingService extends Service {
     // TODO: 09.05.22 need testing
     public GetStatusDocuments getStatusDocuments(SimpleDocumentTracking simpleDocument, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "TrackingDocument");
-        jsonObject.addProperty("calledMethod", "getStatusDocuments");
-
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(simpleDocument);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(simpleDocument, api_key, "TrackingDocument", "getStatusDocuments");
 
         return service
                 .postRequest(URL, jsonObject)
