@@ -36,19 +36,12 @@ public class Address_Service extends Service {
      */
     public GetCity getCity(String city, Pagination pagination, String api_key) throws IOException {
 
-
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "searchSettlements");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("CityName", city);
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
         jsonObjectIn.addProperty("Page", pagination.getPage());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
-
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "searchSettlements", jsonObjectIn);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -67,21 +60,13 @@ public class Address_Service extends Service {
      */
     public GetAddresses getAddresses(String streetName, String settlementRef, Pagination pagination, String api_key) throws IOException {
 
-
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "searchSettlementStreets");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("StreetName", streetName);
         jsonObjectIn.addProperty("SettlementRef", settlementRef);
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
         jsonObjectIn.addProperty("Page", pagination.getPage());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
-
-
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "searchSettlementStreets", jsonObjectIn);
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetAddresses());
@@ -99,15 +84,7 @@ public class Address_Service extends Service {
      */
     public CreateAddress createAddress(SimpleAddress address, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "save");
-
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(address);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
-
+        JsonObject jsonObject = jsonService.toObject(address, api_key, "Address", "save");
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateAddress());
@@ -126,15 +103,10 @@ public class Address_Service extends Service {
      */
     public DeleteAddress deleteAddress(String address_ref, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "delete");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("Ref", address_ref);
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "delete", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new DeleteAddress());
     }
@@ -151,14 +123,7 @@ public class Address_Service extends Service {
      */
     public UpdateAddress updateAddress(SimpleAddress address, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "update");
-
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(address);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(address, api_key, "Address", "update");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -177,17 +142,11 @@ public class Address_Service extends Service {
      */
     public GetSettlements findSettlement(SimpleSettlement settlement, Pagination pagination, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getSettlements");
-
         JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(settlement);
         jsonObjectIn.addProperty("Page", pagination.getPage());
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
-
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "getSettlements", jsonObjectIn);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -204,16 +163,13 @@ public class Address_Service extends Service {
      * @throws IOException
      */
     public GetCompanyCities getCompanyCity(CompanyCity city, Pagination pagination, String api_key) throws IOException {
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getCities");
 
         JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(city);
         jsonObjectIn.addProperty("Page", pagination.getPage());
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "getCities", jsonObjectIn);
+
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetCompanyCities());
@@ -226,13 +182,7 @@ public class Address_Service extends Service {
      */
     public GetRegions getRegions(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getAreas");
-
-        JsonObject jsonObjectIn = new JsonObject();
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "getAreas");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -243,16 +193,11 @@ public class Address_Service extends Service {
 
     public GetDepartment getDepartment(SimpleWarehouse warehouse, Pagination pagination, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getWarehouses");
-
         JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(warehouse);
         jsonObjectIn.addProperty("Page", pagination.getPage());
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "getWarehouses", jsonObjectIn);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -262,13 +207,7 @@ public class Address_Service extends Service {
 
     public GetWarehouseTypes getWarehouseTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getWarehouseTypes");
-
-        JsonObject jsonObjectIn = new JsonObject();
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "getWarehouseTypes");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -277,16 +216,11 @@ public class Address_Service extends Service {
 
     private GetStreet getStreet(SimpleStreet street, Pagination pagination, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Address");
-        jsonObject.addProperty("calledMethod", "getStreet");
-
         JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(street);
         jsonObjectIn.addProperty("Page", pagination.getPage());
         jsonObjectIn.addProperty("Limit", pagination.getLimit());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Address", "getWarehouseTypes", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetStreet());
 
