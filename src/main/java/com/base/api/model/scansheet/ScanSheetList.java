@@ -9,13 +9,13 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ScanSheetList {
 
-        @SerializedName("Ref")
-        String ref;
-        @SerializedName("Number")
-        String number;
-        @SerializedName("DateTime")
-        String dateTime;
-        @SerializedName("Printed")
-        String printed;
+    @SerializedName("Ref")
+    String ref;
+    @SerializedName("Number")
+    String number;
+    @SerializedName("DateTime")
+    String dateTime;
+    @SerializedName("Printed")
+    String printed;
 
 }

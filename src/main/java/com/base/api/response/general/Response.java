@@ -1,6 +1,5 @@
 package com.base.api.response.general;
 
-import com.base.api.model.counterparty.save.CounterpartyOrganization;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;

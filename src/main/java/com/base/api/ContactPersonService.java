@@ -4,7 +4,6 @@ import com.base.api.model.contact.PersonData;
 import com.base.api.model.contact.SimpleContactPerson;
 import com.base.api.response.info.contact.CreateContactPerson;
 import com.base.api.response.info.contact.DeleteContactPerson;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;

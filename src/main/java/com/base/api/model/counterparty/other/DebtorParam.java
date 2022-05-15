@@ -5,17 +5,16 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-import java.util.ArrayList;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DebtorParam{
-    @SerializedName("AgreementId") 
+public class DebtorParam {
+    @SerializedName("AgreementId")
     String agreementId;
-    @SerializedName("PaymTermId") 
+    @SerializedName("PaymTermId")
     String paymTermId;
-    @SerializedName("PastDueDebts") 
+    @SerializedName("PastDueDebts")
     String pastDueDebts;
-    @SerializedName("BlockedStatus") 
+    @SerializedName("BlockedStatus")
     String blockedStatus;
 }
 

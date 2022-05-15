@@ -10,23 +10,23 @@ import lombok.experimental.FieldDefaults;
 public class ScanSheet {
 
     @SerializedName("Ref")
-    public String ref;
+    String ref;
     @SerializedName("Number")
-    public String number;
+    String number;
     @SerializedName("DateTime")
-    public String dateTime;
+    String dateTime;
     @SerializedName("Count")
-    public String count;
+    String count;
     @SerializedName("CitySenderRef")
-    public String citySenderRef;
+    String citySenderRef;
     @SerializedName("CitySender")
-    public String citySender;
+    String citySender;
     @SerializedName("SenderAddressRef")
-    public String senderAddressRef;
+    String senderAddressRef;
     @SerializedName("SenderAddress")
-    public String senderAddress;
+    String senderAddress;
     @SerializedName("SenderRef")
-    public String senderRef;
+    String senderRef;
     @SerializedName("Sender")
-    public String sender;
+    String sender;
 }

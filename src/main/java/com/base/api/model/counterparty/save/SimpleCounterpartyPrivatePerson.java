@@ -1,6 +1,5 @@
 package com.base.api.model.counterparty.save;
 
-import com.base.api.response.general.Response;
 import com.google.gson.annotations.SerializedName;
 import lombok.AccessLevel;
 import lombok.Data;

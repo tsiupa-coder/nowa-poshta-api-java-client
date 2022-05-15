@@ -1,7 +1,6 @@
 package com.base.api.response.info.scansheet;
 
 import com.base.api.model.scansheet.ScanSheet;
-import com.base.api.model.tracking.StatusDocument;
 import com.base.api.response.general.Response;
 import lombok.AccessLevel;
 import lombok.Data;

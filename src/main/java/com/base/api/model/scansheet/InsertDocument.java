@@ -9,11 +9,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class InsertDocument {
 
-        @SerializedName("Ref")
-        public String ref;
-        @SerializedName("Number")
-        public String number;
-        @SerializedName("Date")
-        public String date;
+    @SerializedName("Ref")
+    String ref;
+    @SerializedName("Number")
+    String number;
+    @SerializedName("Date")
+    String date;
 
 }

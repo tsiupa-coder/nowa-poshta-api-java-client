@@ -2,7 +2,6 @@ package com.base.api;
 
 import com.base.api.model.tracking.SimpleDocumentTracking;
 import com.base.api.response.info.tracking.GetStatusDocuments;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;

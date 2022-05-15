@@ -9,11 +9,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DeleteScan {
 
-        @SerializedName("Ref")
-        public String ref;
-        @SerializedName("Number")
-        public String number;
-        @SerializedName("Error")
-        public String error;
+    @SerializedName("Ref")
+    String ref;
+    @SerializedName("Number")
+    String number;
+    @SerializedName("Error")
+    String error;
 
 }

@@ -6,7 +6,6 @@ import com.base.api.model.counterparty.save.SimpleCounterpartyThirdPerson;
 import com.base.api.response.info.counterparty.save.CreateCounterpartyOrganization;
 import com.base.api.response.info.counterparty.save.CreateCounterpartyPrivatePerson;
 import com.base.api.response.info.counterparty.save.CreateCounterpartyThirdPerson;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;

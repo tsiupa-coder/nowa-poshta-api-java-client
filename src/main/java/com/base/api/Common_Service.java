@@ -13,7 +13,6 @@ import com.base.api.response.info.common.GetServiceTypes;
 import com.base.api.response.info.common.GetTimeIntervals;
 import com.base.api.response.info.common.GetTiresWheelsList;
 import com.base.api.response.info.common.GetTypesOfPayersForRedelivery;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;

@@ -2,7 +2,6 @@ package com.base.api;
 
 import com.base.api.model.scansheet.SimpleInsertDocument;
 import com.base.api.model.scansheet.SimpleScanSheet;
-import com.base.api.response.info.counterparty.updata.UpdateCounterparty;
 import com.base.api.response.info.scansheet.DeleteScanSheet;
 import com.base.api.response.info.scansheet.GetScanSheet;
 import com.base.api.response.info.scansheet.GetScanSheetList;
@@ -15,7 +14,7 @@ import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ScanSheetService extends Service{
+public class ScanSheetService extends Service {
 
 
     public GetScanSheet getScanSheet(SimpleScanSheet scanSheet, String api_key) throws IOException {
@@ -34,7 +33,7 @@ public class ScanSheetService extends Service{
 
     public GetScanSheetList getScanSheetList(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "ScanSheet",  "getScanSheetList");
+        JsonObject jsonObject = jsonService.toObject(api_key, "ScanSheet", "getScanSheetList");
 
 
         return service.postRequest(URL, jsonObject).getResponse(new GetScanSheetList());

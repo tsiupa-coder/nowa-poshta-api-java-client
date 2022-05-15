@@ -7,12 +7,11 @@ import com.base.api.response.info.counterparty.other.GetCounterpartyContactPerso
 import com.base.api.response.info.counterparty.other.GetCounterpartyOptions;
 import com.base.api.response.info.counterparty.updata.DeleteCounterparty;
 import com.base.api.response.info.counterparty.updata.UpdateCounterparty;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
-public class CounterpartyService extends Service{
+public class CounterpartyService extends Service {
 
     public UpdateCounterparty update(SimpleCounterparty counterparty, String api_key) throws IOException {
 
