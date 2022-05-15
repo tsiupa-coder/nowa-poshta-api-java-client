@@ -9,19 +9,19 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Address {
     @SerializedName("SettlementRef")
-    public String settlementRef;
+    String settlementRef;
     @SerializedName("SettlementStreetRef")
-    public String settlementStreetRef;
+    String settlementStreetRef;
     @SerializedName("SettlementStreetDescription")
-    public String settlementStreetDescription;
+    String settlementStreetDescription;
     @SerializedName("Present")
-    public String present;
+    String present;
     @SerializedName("StreetsType")
-    public String streetsType;
+    String streetsType;
     @SerializedName("StreetsTypeDescription")
-    public String streetsTypeDescription;
+    String streetsTypeDescription;
     @SerializedName("Location")
-    public Location location;
+    Location location;
     @SerializedName("SettlementStreetDescriptionRu")
-    public String settlementStreetDescriptionRu;
+    String settlementStreetDescriptionRu;
 }

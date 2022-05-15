@@ -9,13 +9,13 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SimplePack {
     @SerializedName("Lengthstring")
-    public String lengthstring;
+    String lengthstring;
     @SerializedName("Widthstring")
-    public String widthstring;
+    String widthstring;
     @SerializedName("Heightstring")
-    public String heightstring;
+    String heightstring;
     @SerializedName("VolumetricWeightstring")
-    public String volumetricWeightstring;
+    String volumetricWeightstring;
     @SerializedName("TypeOfPackingstring")
-    public String typeOfPackingstring;
+    String typeOfPackingstring;
 }

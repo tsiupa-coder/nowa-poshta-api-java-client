@@ -10,8 +10,8 @@ import lombok.experimental.FieldDefaults;
 public class Pagination {
 
     @SerializedName("Limit")
-    private Integer limit;
+    Integer limit;
     @SerializedName("Page")
-    private Integer page;
+    Integer page;
 
 }

@@ -11,5 +11,5 @@ import java.util.ArrayList;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetRegions extends Response {
-    public ArrayList<Region> data;
+    ArrayList<Region> data;
 }

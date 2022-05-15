@@ -12,6 +12,6 @@ import java.util.ArrayList;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetAddresses extends Response {
 
-    public ArrayList<Datum> data;
+    ArrayList<Datum> data;
 
 }

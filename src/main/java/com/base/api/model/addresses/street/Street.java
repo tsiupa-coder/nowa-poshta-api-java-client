@@ -9,11 +9,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Street {
     @SerializedName("Ref")
-    public String ref;
+    String ref;
     @SerializedName("Description")
-    public String description;
+    String description;
     @SerializedName("StreetsTypeRef")
-    public String streetsTypeRef;
+    String streetsTypeRef;
     @SerializedName("StreetsType")
-    public String streetsType;
+    String streetsType;
 }

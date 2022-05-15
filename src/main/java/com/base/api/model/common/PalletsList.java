@@ -9,11 +9,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PalletsList {
     @SerializedName("Ref")
-    public String ref;
+    String ref;
     @SerializedName("Description")
-    public String description;
+    String description;
     @SerializedName("DescriptionRu")
-    public String descriptionRu;
+    String descriptionRu;
     @SerializedName("Weight")
-    public String weight;
+    String weight;
 }

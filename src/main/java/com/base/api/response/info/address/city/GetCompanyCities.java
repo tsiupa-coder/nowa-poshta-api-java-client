@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetCompanyCities extends Response {
 
-    public ArrayList<DataCompanyCity> data;
+    ArrayList<DataCompanyCity> data;
 
 
 }

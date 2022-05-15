@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Datum {
     @SerializedName("TotalCount")
-    public int totalCount;
+    int totalCount;
     @SerializedName("Addresses")
-    public ArrayList<Address> addresses;
+    ArrayList<Address> addresses;
 }

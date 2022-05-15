@@ -11,5 +11,5 @@ import java.util.ArrayList;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetStreet extends Response {
-    public ArrayList<Street> data;
+    ArrayList<Street> data;
 }

@@ -10,15 +10,15 @@ import lombok.experimental.FieldDefaults;
 public class PersonData {
 
     @SerializedName("CounterpartyRef")
-    public String counterpartyRef;
+    String counterpartyRef;
     @SerializedName("Ref")
-    public String ref;
+    String ref;
     @SerializedName("FirstName")
-    public String firstName;
+    String firstName;
     @SerializedName("LastName")
-    public String lastName;
+    String lastName;
     @SerializedName("MiddleName")
-    public String middleName;
+    String middleName;
     @SerializedName("Phone")
-    public String phone;
+    String phone;
 }

@@ -11,6 +11,6 @@ import java.util.ArrayList;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetDepartment extends Response {
-    public ArrayList<Department> data;
+    ArrayList<Department> data;
 
 }

@@ -9,9 +9,9 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class OwnershipForms {
     @SerializedName("Ref")
-    public String ref;
+    String ref;
     @SerializedName("Description")
-    public String description;
+    String description;
     @SerializedName("FullName")
-    public String fullName;
+    String fullName;
 }

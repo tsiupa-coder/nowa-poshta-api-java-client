@@ -9,19 +9,19 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PackList {
     @SerializedName("Ref")
-    public String ref;
+    String ref;
     @SerializedName("Description")
-    public String description;
+    String description;
     @SerializedName("DescriptionRu")
-    public String descriptionRu;
+    String descriptionRu;
     @SerializedName("Length")
-    public String length;
+    String length;
     @SerializedName("Width")
-    public String width;
+    String width;
     @SerializedName("Height")
-    public String height;
+    String height;
     @SerializedName("VolumetricWeight")
-    public String volumetricWeight;
+    String volumetricWeight;
     @SerializedName("TypeOfPacking")
-    public String typeOfPacking;
+    String typeOfPacking;
 }

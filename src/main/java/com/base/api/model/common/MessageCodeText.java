@@ -9,11 +9,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class MessageCodeText {
     @SerializedName("MessageCode")
-    public String messageCode;
+    String messageCode;
     @SerializedName("MessageText")
-    public String messageText;
+    String messageText;
     @SerializedName("MessageDescriptionRU")
-    public String messageDescriptionRU;
+    String messageDescriptionRU;
     @SerializedName("MessageDescriptionUA")
-    public String messageDescriptionUA;
+    String messageDescriptionUA;
 }

@@ -11,5 +11,5 @@ import java.util.ArrayList;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class GetWarehouseTypes extends Response {
-    public ArrayList<WarehouseType> data;
+    ArrayList<WarehouseType> data;
 }
