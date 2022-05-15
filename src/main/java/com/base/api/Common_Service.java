@@ -23,14 +23,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetTimeIntervals getTimeIntervals(SimpleTimeInterval timeInterval, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getTimeIntervals");
-
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(timeInterval);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(timeInterval, api_key, "Common", "getTimeIntervals");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -41,14 +34,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetCargoTypes getCargoTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getCargoTypes");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getCargoTypes");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -58,14 +44,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetCargoTypes getBackwardDeliveryCargoTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getBackwardDeliveryCargoTypes");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getBackwardDeliveryCargoTypes");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -75,15 +54,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetPalletsList getPalletsList(String api_key) throws IOException {
 
-
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getPalletsList");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getPalletsList");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -93,14 +64,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetTypesOfPayersForRedelivery getTypesOfPayersForRedelivery(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getTypesOfPayersForRedelivery");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getTypesOfPayersForRedelivery");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -110,14 +74,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetPackList getPackList(SimplePack pack, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getPackList");
-
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(pack);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getPackList");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -127,14 +84,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetTiresWheelsList getTiresWheelsList(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getTiresWheelsList");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getTiresWheelsList");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -144,16 +94,11 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetCargoDescriptionList getCargoDescriptionList(String findByString, Pagination pagination, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getCargoDescriptionList");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("FindByString", findByString);
         jsonObjectIn.addProperty("Page", pagination.getPage());
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getCargoDescriptionList", jsonObjectIn);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -163,14 +108,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetMessageCodeText getMessageCodeText(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getMessageCodeText");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getMessageCodeText");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -181,14 +119,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetServiceTypes getServiceTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getServiceTypes");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getServiceTypes");
 
         return service
                 .postRequest(URL, jsonObject)
@@ -198,14 +129,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetOwnershipFormsList getOwnershipFormsList(String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Common");
-        jsonObject.addProperty("calledMethod", "getOwnershipFormsList");
-
-        JsonObject jsonObjectIn = new JsonObject();
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getOwnershipFormsList");
 
         return service
                 .postRequest(URL, jsonObject)
