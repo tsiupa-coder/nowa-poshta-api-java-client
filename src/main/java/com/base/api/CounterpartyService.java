@@ -16,98 +16,62 @@ public class CounterpartyService extends Service{
 
     public UpdateCounterparty update(SimpleCounterparty counterparty, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "update");
-
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(counterparty, api_key, "Counterparty", "update");
 
         return service.postRequest(URL, jsonObject).getResponse(new UpdateCounterparty());
     }
 
     public DeleteCounterparty deleteCounterparty(String ref, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "delete");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("Ref", ref);
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Counterparty", "delete", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new DeleteCounterparty());
-
     }
 
     public GetCounterpartyAddresses getCounterpartyAddresses(String ref, String counterpartyProperty, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "getCounterpartyAddresses");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("Ref", ref);
         jsonObjectIn.addProperty("CounterpartyProperty", counterpartyProperty);
-        jsonObject.add("methodProperties", jsonObjectIn);
+
+        JsonObject jsonObject = jsonService.toObject(api_key, "Counterparty", "getCounterpartyAddresses", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetCounterpartyAddresses());
-
     }
 
     public GetCounterpartyOptions getCounterpartyOptions(String ref, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "getCounterpartyOptions");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("Ref", ref);
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Counterparty", "getCounterpartyOptions", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetCounterpartyOptions());
     }
 
     public GetCounterpartyContactPersons getCounterpartyContactPersons(String ref, String page, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "getCounterpartyContactPersons");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("Ref", ref);
-        jsonObject.addProperty("Page", page);
+        jsonObjectIn.addProperty("Page", page);
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Counterparty", "getCounterpartyContactPersons", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetCounterpartyContactPersons());
-
     }
 
     public GetCounterparties getCounterparties(String counterpartyProperty, String page, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "getCounterparties");
-
         JsonObject jsonObjectIn = new JsonObject();
         jsonObjectIn.addProperty("CounterpartyProperty", counterpartyProperty);
-        jsonObject.addProperty("Page", page);
+        jsonObjectIn.addProperty("Page", page);
 
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, "Counterparty", "getCounterparties", jsonObjectIn);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetCounterparties());
-
-
 
     }
 }
