@@ -19,18 +19,10 @@ public class CounterpartySaveService extends Service {
      */
     public CreateCounterpartyPrivatePerson createCounterparty(SimpleCounterpartyPrivatePerson counterparty, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "save");
-
         counterparty.setCounterpartyType("PrivatePerson");
         counterparty.setCounterpartyProperty("Recipient");
 
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
-
+        JsonObject jsonObject = jsonService.toObject(counterparty, api_key, "Counterparty", "save");
         return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyPrivatePerson());
 
     }
@@ -39,36 +31,22 @@ public class CounterpartySaveService extends Service {
      * Даний метод дозволяє створювати Контрагентів отримувачів з типом Третя особа.
      */
     public CreateCounterpartyThirdPerson createCounterparty(SimpleCounterpartyThirdPerson counterparty, String api_key) throws IOException {
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "save");
 
         counterparty.setCounterpartyType("ThirdPerson");
         counterparty.setCounterpartyProperty("Organization");
 
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(counterparty, api_key, "Counterparty", "save");
 
         return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyThirdPerson());
     }
 
     public CreateCounterpartyOrganization createCounterparty(SimpleCounterpartyOrganization counterparty, String api_key) throws IOException {
 
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("apiKey", api_key);
-        jsonObject.addProperty("modelName", "Counterparty");
-        jsonObject.addProperty("calledMethod", "save");
-
         counterparty.setCounterpartyType("Organization");
         counterparty.setCounterpartyProperty("Recipient");
 
-        JsonObject jsonObjectIn = (JsonObject) new Gson().toJsonTree(counterparty);
-
-        jsonObject.add("methodProperties", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(counterparty, api_key, "Counterparty", "save");
 
         return service.postRequest(URL, jsonObject).getResponse(new CreateCounterpartyOrganization());
-
     }
 }
