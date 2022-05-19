@@ -1,6 +1,7 @@
 package com.base.api;
 
 import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn;
+import com.base.api.response.info.additionalservice.GetReturnReasons;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
@@ -18,5 +19,16 @@ public class AdditionalService extends Service{
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CheckPossibilityCreateReturn());
+    }
+
+
+    public GetReturnReasons getReturnReasons(String api_key) throws IOException {
+
+        JsonObject jsonObject = jsonService.toObject(api_key, "AdditionalService", "getReturnReasons");
+
+        return service
+                .postRequest(URL, jsonObject)
+                .getResponse(new GetReturnReasons());
+
     }
 }
