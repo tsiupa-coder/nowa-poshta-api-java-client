@@ -2,6 +2,7 @@ package com.base.api;
 
 import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn;
 import com.base.api.response.info.additionalservice.GetReturnReasons;
+import com.base.api.response.info.additionalservice.GetReturnReasonsSubtypes;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
@@ -30,5 +31,17 @@ public class AdditionalService extends Service{
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetReturnReasons());
 
+    }
+
+    public GetReturnReasonsSubtypes getReturnReasonsSubtypes(String reasonRef, String api_key) throws IOException {
+
+        JsonObject jsonObjectin = new JsonObject();
+        jsonObjectin.addProperty("ReasonRef", reasonRef);
+
+        JsonObject wrapper = jsonService.toObject(api_key, "AdditionalService", "getReturnReasonsSubtypes", jsonObjectin);
+
+        return service
+                .postRequest(URL, wrapper)
+                .getResponse(new GetReturnReasonsSubtypes());
     }
 }
