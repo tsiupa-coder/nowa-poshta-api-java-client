@@ -7,7 +7,7 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class OrdersListRequest {
+public class ListRequest {
     @SerializedName("Number")
     String number;
     @SerializedName("Ref")

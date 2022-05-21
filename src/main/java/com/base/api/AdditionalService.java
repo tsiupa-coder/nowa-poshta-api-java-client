@@ -1,9 +1,10 @@
 package com.base.api;
 
-import com.base.api.model.additionalservice.OrdersListRequest;
+import com.base.api.model.additionalservice.ListRequest;
 import com.base.api.response.info.additionalservice.CheckPossibilityChangeEW;
 import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn;
 import com.base.api.response.info.additionalservice.DeleteAdditionalService;
+import com.base.api.response.info.additionalservice.GetChangeEWOrdersList;
 import com.base.api.response.info.additionalservice.GetReturnOrdersList;
 import com.base.api.response.info.additionalservice.GetReturnReasons;
 import com.base.api.response.info.additionalservice.GetReturnReasonsSubtypes;
@@ -49,7 +50,7 @@ public class AdditionalService extends Service{
                 .getResponse(new GetReturnReasonsSubtypes());
     }
 
-    public GetReturnOrdersList getReturnOrdersList(OrdersListRequest request, String api_key) throws IOException {
+    public GetReturnOrdersList getReturnOrdersList(ListRequest request, String api_key) throws IOException {
 
         JsonObject  wrapper = jsonService.toObject(request, api_key, "AdditionalService", "getReturnOrdersList");
 
@@ -81,5 +82,16 @@ public class AdditionalService extends Service{
         return service
                 .postRequest(URL, wrapper)
                 .getResponse(new CheckPossibilityChangeEW());
+    }
+
+    public GetChangeEWOrdersList getChangeEWOrdersList(ListRequest request, String api_key) throws IOException {
+
+        JsonObject  wrapper = jsonService.toObject(request, api_key, "AdditionalService", "getChangeEWOrdersList");
+
+        return service
+                .postRequest(URL, wrapper)
+                .getResponse(new GetChangeEWOrdersList());
+
+
     }
 }
