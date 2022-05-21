@@ -8,7 +8,9 @@ public class Service {
     protected static final String URL = "https://api.novaposhta.ua/v2.0/json/";
 
     public Service() {
+
         service = new HTTP_Service();
+        jsonService = new JsonService();
     }
 
 
