@@ -6,6 +6,7 @@ import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn
 import com.base.api.response.info.additionalservice.CheckPossibilityForRedirecting;
 import com.base.api.response.info.additionalservice.DeleteAdditionalService;
 import com.base.api.response.info.additionalservice.GetChangeEWOrdersList;
+import com.base.api.response.info.additionalservice.GetRedirectionOrdersList;
 import com.base.api.response.info.additionalservice.GetReturnOrdersList;
 import com.base.api.response.info.additionalservice.GetReturnReasons;
 import com.base.api.response.info.additionalservice.GetReturnReasonsSubtypes;
@@ -105,5 +106,13 @@ public class AdditionalService extends Service{
         return service
                 .postRequest(URL, wrapper)
                 .getResponse(new CheckPossibilityForRedirecting());
+    }
+
+    public GetRedirectionOrdersList getRedirectionOrdersList(ListRequest request, String api_key) throws IOException {
+        JsonObject  wrapper = jsonService.toObject(request, api_key, "AdditionalService", "getRedirectionOrdersList");
+
+        return service
+                .postRequest(URL, wrapper)
+                .getResponse(new GetRedirectionOrdersList());
     }
 }
