@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import java.io.BufferedInputStream;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.base.api.model.contact.PersonData;
 import com.base.api.model.contact.SimpleContactPerson;

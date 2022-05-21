@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.base.api.model.tracking.SimpleDocumentTracking;
 import com.base.api.response.info.tracking.GetStatusDocuments;

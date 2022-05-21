@@ -7,6 +7,7 @@ import com.base.api.response.info.address.adresses.CreateAddress;
 import com.base.api.response.info.address.adresses.GetAddresses;
 import com.base.api.model.addresses.address.SimpleAddress;
 import com.base.api.response.info.address.city.GetCity;
+import com.base.api.mainservice.Address_Service;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -46,7 +47,7 @@ public class Address_ServiceTest extends TestCase {
                 pagination,
                 API_KEY);
 
-        info.data.get(0).addresses.forEach(System.out::println);
+        info.getData().get(0).getAddresses().forEach(System.out::println);
     }
 
     public void test_create_address() throws IOException {

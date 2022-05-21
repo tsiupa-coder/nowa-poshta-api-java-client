@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.base.api.model.common.SimplePack;
 import com.base.api.model.common.SimpleTimeInterval;

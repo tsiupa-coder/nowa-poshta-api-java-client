@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.base.api.model.addresses.address.SimpleAddress;
 import com.base.api.model.addresses.city.CompanyCity;

@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.base.api.model.additionalservice.ListRequest;
 import com.base.api.response.info.additionalservice.CheckPossibilityChangeEW;
@@ -30,7 +30,7 @@ import static com.base.api.model.StringConstants.NUMBER;
 import static com.base.api.model.StringConstants.REASON_REF;
 import static com.base.api.model.StringConstants.REF;
 
-public class AdditionalService extends Service{
+public class AdditionalService extends Service {
 
     public CheckPossibilityCreateReturn checkPossibilityCreateReturn(String number, String api_key) throws IOException {
 

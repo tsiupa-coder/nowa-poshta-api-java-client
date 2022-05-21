@@ -1,9 +1,9 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 public class Service {
 
-    protected HTTP_Service service;
-    protected JsonService jsonService;
+    public HTTP_Service service;
+    public JsonService jsonService;
 
     protected static final String URL = "https://api.novaposhta.ua/v2.0/json/";
 

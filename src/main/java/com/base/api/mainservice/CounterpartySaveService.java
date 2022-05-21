@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.base.api.model.counterparty.save.SimpleCounterpartyOrganization;
 import com.base.api.model.counterparty.save.SimpleCounterpartyPrivatePerson;

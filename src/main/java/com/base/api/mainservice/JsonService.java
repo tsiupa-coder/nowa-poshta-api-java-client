@@ -1,4 +1,4 @@
-package com.base.api;
+package com.base.api.mainservice;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
