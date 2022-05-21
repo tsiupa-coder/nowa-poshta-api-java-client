@@ -63,6 +63,12 @@ public class StringConstants {
     public static final String TRACKING_DOCUMENT = "TrackingDocument";
     public static final String GET_STATUS_DOCUMENTS = "getStatusDocuments";
 
+    public static final String API_KEY = "apiKey";
+    public static final String MODEL_NAME = "modelName";
+    public static final String CALLED_METHOD = "calledMethod";
+    public static final String METHOD_PROPERTIES = "methodProperties";
+
+
 
 
 }
