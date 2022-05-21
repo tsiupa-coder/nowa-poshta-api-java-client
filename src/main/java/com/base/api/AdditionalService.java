@@ -2,6 +2,7 @@ package com.base.api;
 
 import com.base.api.model.additionalservice.OrdersListRequest;
 import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn;
+import com.base.api.response.info.additionalservice.DeleteAdditionalService;
 import com.base.api.response.info.additionalservice.GetReturnOrdersList;
 import com.base.api.response.info.additionalservice.GetReturnReasons;
 import com.base.api.response.info.additionalservice.GetReturnReasonsSubtypes;
@@ -55,5 +56,17 @@ public class AdditionalService extends Service{
                 .postRequest(URL, wrapper)
                 .getResponse(new GetReturnOrdersList());
 
+    }
+
+    public DeleteAdditionalService deleteAdditionalService(String ref, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("Ref", ref);
+
+        JsonObject wrapper = jsonService.toObject(api_key, "AdditionalService", "delete", jsonObject);
+
+        return service
+                .postRequest(URL, wrapper)
+                .getResponse(new DeleteAdditionalService());
     }
 }
