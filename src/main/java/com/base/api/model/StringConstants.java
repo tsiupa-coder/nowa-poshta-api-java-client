@@ -36,4 +36,7 @@ public class StringConstants {
     public static final String GET_OWNERSHIP_FORMS_LIST = "getOwnershipFormsList";
     public static final String FIND_BY_STRING = "FindByString";
 
+    public static final String CONTACT_PERSON = "ContactPerson";
+
+
 }
