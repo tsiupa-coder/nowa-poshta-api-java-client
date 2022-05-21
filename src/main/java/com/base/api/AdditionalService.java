@@ -109,6 +109,7 @@ public class AdditionalService extends Service{
     }
 
     public GetRedirectionOrdersList getRedirectionOrdersList(ListRequest request, String api_key) throws IOException {
+
         JsonObject  wrapper = jsonService.toObject(request, api_key, "AdditionalService", "getRedirectionOrdersList");
 
         return service
