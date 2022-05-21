@@ -1,6 +1,7 @@
 package com.base.api;
 
 import com.base.api.model.additionalservice.OrdersListRequest;
+import com.base.api.response.info.additionalservice.CheckPossibilityChangeEW;
 import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn;
 import com.base.api.response.info.additionalservice.DeleteAdditionalService;
 import com.base.api.response.info.additionalservice.GetReturnOrdersList;
@@ -68,5 +69,17 @@ public class AdditionalService extends Service{
         return service
                 .postRequest(URL, wrapper)
                 .getResponse(new DeleteAdditionalService());
+    }
+
+    public  CheckPossibilityChangeEW checkPossibilityChangeEW (String intDocNumber, String api_key) throws IOException {
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("IntDocNumber", intDocNumber);
+
+        JsonObject wrapper = jsonService.toObject(api_key, "AdditionalService", "CheckPossibilityChangeEW", jsonObject);
+
+        return service
+                .postRequest(URL, wrapper)
+                .getResponse(new CheckPossibilityChangeEW());
     }
 }
