@@ -17,7 +17,5 @@ public class TrackingService extends Service {
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetStatusDocuments());
-
-
     }
 }

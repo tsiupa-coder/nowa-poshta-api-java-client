@@ -17,12 +17,27 @@ import com.google.gson.JsonObject;
 
 import java.io.IOException;
 
+import static com.base.api.model.StringConstants.COMMON;
+import static com.base.api.model.StringConstants.FIND_BY_STRING;
+import static com.base.api.model.StringConstants.GET_BACKWARD_DELIVERY_CARGO_TYPES;
+import static com.base.api.model.StringConstants.GET_CARGO_DESCRIPTION_LIST;
+import static com.base.api.model.StringConstants.GET_CARGO_TYPES;
+import static com.base.api.model.StringConstants.GET_MESSAGE_CODE_TEXT;
+import static com.base.api.model.StringConstants.GET_OWNERSHIP_FORMS_LIST;
+import static com.base.api.model.StringConstants.GET_PACK_LIST;
+import static com.base.api.model.StringConstants.GET_PALLETS_LIST;
+import static com.base.api.model.StringConstants.GET_SERVICE_TYPES;
+import static com.base.api.model.StringConstants.GET_TIME_INTERVALS;
+import static com.base.api.model.StringConstants.GET_TIRES_WHEELS_LIST;
+import static com.base.api.model.StringConstants.GET_TYPES_OF_PAYERS_FOR_REDELIVERY;
+import static com.base.api.model.StringConstants.PAGE;
+
 public class Common_Service extends Service {
 
     // TODO: 08.05.22 need testing
     public GetTimeIntervals getTimeIntervals(SimpleTimeInterval timeInterval, String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(timeInterval, api_key, "Common", "getTimeIntervals");
+        JsonObject jsonObject = jsonService.toObject(timeInterval, api_key, COMMON, GET_TIME_INTERVALS);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -33,7 +48,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetCargoTypes getCargoTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getCargoTypes");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_CARGO_TYPES);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -43,7 +58,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetCargoTypes getBackwardDeliveryCargoTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getBackwardDeliveryCargoTypes");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_BACKWARD_DELIVERY_CARGO_TYPES);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -53,7 +68,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetPalletsList getPalletsList(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getPalletsList");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_PALLETS_LIST);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -63,7 +78,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetTypesOfPayersForRedelivery getTypesOfPayersForRedelivery(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getTypesOfPayersForRedelivery");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_TYPES_OF_PAYERS_FOR_REDELIVERY);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -73,7 +88,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetPackList getPackList(SimplePack pack, String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getPackList");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_PACK_LIST);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -83,7 +98,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetTiresWheelsList getTiresWheelsList(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getTiresWheelsList");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_TIRES_WHEELS_LIST);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -94,10 +109,10 @@ public class Common_Service extends Service {
     public GetCargoDescriptionList getCargoDescriptionList(String findByString, Pagination pagination, String api_key) throws IOException {
 
         JsonObject jsonObjectIn = new JsonObject();
-        jsonObjectIn.addProperty("FindByString", findByString);
-        jsonObjectIn.addProperty("Page", pagination.getPage());
+        jsonObjectIn.addProperty(FIND_BY_STRING, findByString);
+        jsonObjectIn.addProperty(PAGE, pagination.getPage());
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getCargoDescriptionList", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_CARGO_DESCRIPTION_LIST, jsonObjectIn);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -107,7 +122,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetMessageCodeText getMessageCodeText(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getMessageCodeText");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_MESSAGE_CODE_TEXT);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -118,7 +133,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetServiceTypes getServiceTypes(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getServiceTypes");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_SERVICE_TYPES);
 
         return service
                 .postRequest(URL, jsonObject)
@@ -128,7 +143,7 @@ public class Common_Service extends Service {
     // TODO: 08.05.22 need testing
     public GetOwnershipFormsList getOwnershipFormsList(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "Common", "getOwnershipFormsList");
+        JsonObject jsonObject = jsonService.toObject(api_key, COMMON, GET_OWNERSHIP_FORMS_LIST);
 
         return service
                 .postRequest(URL, jsonObject)
