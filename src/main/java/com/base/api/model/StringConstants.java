@@ -43,4 +43,22 @@ public class StringConstants {
     public static final String COUNTERPARTY = "Counterparty";
 
 
+    public static final String GET_COUNTERPARTY_ADDRESSES = "getCounterpartyAddresses";
+    public static final String GET_COUNTERPARTY_OPTIONS = "getCounterpartyOptions";
+    public static final String GET_COUNTERPARTY_CONTACT_PERSONS = "getCounterpartyContactPersons";
+    public static final String GET_COUNTERPARTIES = "getCounterparties";
+    public static final String COUNTERPARTY_PROPERTY = "CounterpartyProperty";
+
+
+    public static final String SCAN_SHEET = "ScanSheet";
+    public static final String GET_SCAN_SHEET = "getScanSheet";
+    public static final String INSERT_DOCUMENTS = "insertDocuments";
+    public static final String GET_SCAN_SHEET_LIST = "getScanSheetList";
+    public static final String DELETE_SCAN_SHEET = "deleteScanSheet";
+    public static final String REMOVE_DOCUMENTS = "removeDocuments";
+    public static final String SCAN_SHEET_REFS = "ScanSheetRefs";
+    public static final String DOCUMENT_REFS = "DocumentRefs";
+
+
+
 }

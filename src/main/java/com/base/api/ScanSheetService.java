@@ -14,26 +14,35 @@ import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ScanSheetService extends Service {
+import static com.base.api.model.StringConstants.DELETE_SCAN_SHEET;
+import static com.base.api.model.StringConstants.DOCUMENT_REFS;
+import static com.base.api.model.StringConstants.GET_SCAN_SHEET;
+import static com.base.api.model.StringConstants.GET_SCAN_SHEET_LIST;
+import static com.base.api.model.StringConstants.INSERT_DOCUMENTS;
+import static com.base.api.model.StringConstants.REF;
+import static com.base.api.model.StringConstants.REMOVE_DOCUMENTS;
+import static com.base.api.model.StringConstants.SCAN_SHEET;
+import static com.base.api.model.StringConstants.SCAN_SHEET_REFS;
 
+public class ScanSheetService extends Service {
 
     public GetScanSheet getScanSheet(SimpleScanSheet scanSheet, String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(scanSheet, api_key, "ScanSheet", "getScanSheet");
+        JsonObject jsonObject = jsonService.toObject(scanSheet, api_key, SCAN_SHEET, GET_SCAN_SHEET);
 
         return service.postRequest(URL, jsonObject).getResponse(new GetScanSheet());
     }
 
     public InsertDocuments insertDocuments(SimpleInsertDocument simpleInsertDocument, String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(simpleInsertDocument, api_key, "ScanSheet", "insertDocuments");
+        JsonObject jsonObject = jsonService.toObject(simpleInsertDocument, api_key, SCAN_SHEET, INSERT_DOCUMENTS);
 
         return service.postRequest(URL, jsonObject).getResponse(new InsertDocuments());
     }
 
     public GetScanSheetList getScanSheetList(String api_key) throws IOException {
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "ScanSheet", "getScanSheetList");
+        JsonObject jsonObject = jsonService.toObject(api_key, SCAN_SHEET, GET_SCAN_SHEET_LIST);
 
 
         return service.postRequest(URL, jsonObject).getResponse(new GetScanSheetList());
@@ -43,9 +52,9 @@ public class ScanSheetService extends Service {
 
         JsonObject jsonObjectIn = new JsonObject();
         JsonArray jsonArray = (JsonArray) new Gson().toJsonTree(scanSheetRefs);
-        jsonObjectIn.add("ScanSheetRefs", jsonArray);
+        jsonObjectIn.add(SCAN_SHEET_REFS, jsonArray);
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "ScanSheet", "deleteScanSheet", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, SCAN_SHEET, DELETE_SCAN_SHEET, jsonObjectIn);
         return service.postRequest(URL, jsonObject).getResponse(new DeleteScanSheet());
     }
 
@@ -53,10 +62,10 @@ public class ScanSheetService extends Service {
 
         JsonObject jsonObjectIn = new JsonObject();
         JsonArray jsonArray = (JsonArray) new Gson().toJsonTree(documentRefs);
-        jsonObjectIn.add("DocumentRefs", jsonArray);
-        jsonObjectIn.addProperty("Ref", ref);
+        jsonObjectIn.add(DOCUMENT_REFS, jsonArray);
+        jsonObjectIn.addProperty(REF, ref);
 
-        JsonObject jsonObject = jsonService.toObject(api_key, "ScanSheet", "removeDocuments", jsonObjectIn);
+        JsonObject jsonObject = jsonService.toObject(api_key, SCAN_SHEET, REMOVE_DOCUMENTS, jsonObjectIn);
         return service.postRequest(URL, jsonObject).getResponse(new RemoveDocuments());
     }
 }
