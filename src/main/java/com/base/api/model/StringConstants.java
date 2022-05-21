@@ -69,6 +69,21 @@ public class StringConstants {
     public static final String METHOD_PROPERTIES = "methodProperties";
 
 
+    public static final String NUMBER = "Number";
+    public static final String ADDITIONAL_SERVICE = "AdditionalService";
+    public static final String CHECK_POSSIBILITY_CREATE_RETURN = "CheckPossibilityCreateReturn";
+    public static final String GET_RETURN_REASONS = "getReturnReasons";
+    public static final String GET_RETURN_REASONS_SUBTYPES = "getReturnReasonsSubtypes";
+    public static final String GET_RETURN_ORDERS_LIST = "getReturnOrdersList";
+
+    public static final String CHECK_POSSIBILITY_CHANGE_EW = "CheckPossibilityChangeEW";
+    public static final String GET_CHANGE_EW_ORDERS_LIST = "getChangeEWOrdersList";
+    public static final String ADDITIONAL_SERVICE_GENERAL = "AdditionalServiceGeneral";
+    public static final String CHECK_POSSIBILITY_FOR_REDIRECTING = "checkPossibilityForRedirecting";
+    public static final String GET_REDIRECTION_ORDERS_LIST = "getRedirectionOrdersList";
+    public static final String INT_DOC_NUMBER = "IntDocNumber";
+    public static final String REASON_REF = "ReasonRef";
+
 
 
 }
