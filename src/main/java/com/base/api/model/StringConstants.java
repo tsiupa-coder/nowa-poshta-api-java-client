@@ -60,5 +60,9 @@ public class StringConstants {
     public static final String DOCUMENT_REFS = "DocumentRefs";
 
 
+    public static final String TRACKING_DOCUMENT = "TrackingDocument";
+    public static final String GET_STATUS_DOCUMENTS = "getStatusDocuments";
+
+
 
 }
