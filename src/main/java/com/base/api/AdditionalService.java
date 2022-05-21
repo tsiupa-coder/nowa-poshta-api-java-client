@@ -1,6 +1,8 @@
 package com.base.api;
 
+import com.base.api.model.additionalservice.OrdersListRequest;
 import com.base.api.response.info.additionalservice.CheckPossibilityCreateReturn;
+import com.base.api.response.info.additionalservice.GetReturnOrdersList;
 import com.base.api.response.info.additionalservice.GetReturnReasons;
 import com.base.api.response.info.additionalservice.GetReturnReasonsSubtypes;
 import com.google.gson.JsonObject;
@@ -43,5 +45,15 @@ public class AdditionalService extends Service{
         return service
                 .postRequest(URL, wrapper)
                 .getResponse(new GetReturnReasonsSubtypes());
+    }
+
+    public GetReturnOrdersList getReturnOrdersList(OrdersListRequest request, String api_key) throws IOException {
+
+        JsonObject  wrapper = jsonService.toObject(request, api_key, "AdditionalService", "getReturnOrdersList");
+
+        return service
+                .postRequest(URL, wrapper)
+                .getResponse(new GetReturnOrdersList());
+
     }
 }
