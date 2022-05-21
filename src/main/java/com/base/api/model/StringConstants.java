@@ -38,5 +38,9 @@ public class StringConstants {
 
     public static final String CONTACT_PERSON = "ContactPerson";
 
+    public static final String PRIVATE_PERSON = "PrivatePerson";
+    public static final String RECIPIENT = "Recipient";
+    public static final String COUNTERPARTY = "Counterparty";
+
 
 }
