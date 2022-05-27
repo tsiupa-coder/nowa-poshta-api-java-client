@@ -8,6 +8,8 @@ import com.base.api.response.info.address.adresses.GetAddresses;
 import com.base.api.model.addresses.address.SimpleAddress;
 import com.base.api.response.info.address.city.GetCity;
 import com.base.api.mainservice.Address_Service;
+import com.base.api.response.info.address.department.GetWarehouseTypes;
+import com.base.api.response.info.address.regions.GetRegions;
 import junit.framework.TestCase;
 import org.junit.Test;
 
@@ -75,14 +77,23 @@ public class Address_ServiceTest extends TestCase {
 
         Pagination pagination = new Pagination();
         pagination.setPage(1);
-        service.findSettlement(simpleSettlement, pagination, "test_api_key");
+        service.findSettlement(simpleSettlement, pagination, API_KEY);
     }
 
 
     public void test_getRegions() throws IOException {
 
-        service.getRegions("test_api_key");
+        GetRegions info = service.getRegions(API_KEY);
+        info.getStatusResponse();
+        info.getData().forEach(System.out::println);
 
+    }
 
+    public void test_getWarehouseTypes() throws IOException {
+
+        GetWarehouseTypes info = service.getWarehouseTypes(API_KEY);
+
+        info.getStatusResponse();
+        info.getData().forEach(System.out::println);
     }
 }
