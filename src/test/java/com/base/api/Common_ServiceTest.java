@@ -2,6 +2,7 @@ package com.base.api;
 
 import com.base.api.mainservice.Common_Service;
 import com.base.api.response.info.common.GetCargoTypes;
+import com.base.api.response.info.common.GetPalletsList;
 import junit.framework.TestCase;
 
 import java.io.IOException;
@@ -28,8 +29,11 @@ public class Common_ServiceTest extends TestCase {
         info.getData().forEach(System.out::println);
     }
 
-    public void testGetPalletsList() {
-        service.getPalletsList(API_KEY);
+    public void testGetPalletsList() throws IOException {
+        GetPalletsList info = service.getPalletsList(API_KEY);
+
+        System.out.println(info.getStatusResponse());
+        info.getData().forEach(System.out::println);
     }
 
     public void testGetTypesOfPayersForRedelivery() {
