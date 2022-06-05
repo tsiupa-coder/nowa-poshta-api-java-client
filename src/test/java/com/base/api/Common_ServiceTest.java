@@ -46,7 +46,12 @@ public class Common_ServiceTest extends TestCase {
         info.getData().forEach(System.out::println);
     }
 
-    public void testGetPackList() {
+    public void testGetPackList() throws IOException {
+
+        GetPalletsList  info = service.getPalletsList(API_KEY);
+
+        System.out.println(info.getStatusResponse());
+        info.getData().forEach(System.out::println);
     }
 
     public void testGetTiresWheelsList() {
