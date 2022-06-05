@@ -1,6 +1,8 @@
 package com.base.api;
 
 import com.base.api.mainservice.Common_Service;
+import com.base.api.request.Pagination;
+import com.base.api.response.info.common.GetCargoDescriptionList;
 import com.base.api.response.info.common.GetCargoTypes;
 import com.base.api.response.info.common.GetPalletsList;
 import com.base.api.response.info.common.GetTiresWheelsList;
@@ -62,7 +64,15 @@ public class Common_ServiceTest extends TestCase {
         info.getData().forEach(System.out::println);
     }
 
-    public void testGetCargoDescriptionList() {
+    public void testGetCargoDescriptionList() throws IOException {
+        Pagination pagination = new Pagination();
+        pagination.setPage(1);
+        pagination.setLimit(100);
+        GetCargoDescriptionList info = service.getCargoDescriptionList(null, pagination, API_KEY);
+
+        System.out.println(info.getStatusResponse());
+
+        info.getData().forEach(System.out::println);
     }
 
     public void testGetMessageCodeText() {
