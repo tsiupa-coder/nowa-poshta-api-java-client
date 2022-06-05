@@ -21,10 +21,15 @@ public class Common_ServiceTest extends TestCase {
         info.getData().forEach(System.out::println);
     }
 
-    public void testGetBackwardDeliveryCargoTypes() {
+    public void testGetBackwardDeliveryCargoTypes() throws IOException {
+        GetCargoTypes info = service.getBackwardDeliveryCargoTypes(API_KEY);
+
+        System.out.println(info.getStatusResponse());
+        info.getData().forEach(System.out::println);
     }
 
     public void testGetPalletsList() {
+        service.getPalletsList(API_KEY);
     }
 
     public void testGetTypesOfPayersForRedelivery() {
