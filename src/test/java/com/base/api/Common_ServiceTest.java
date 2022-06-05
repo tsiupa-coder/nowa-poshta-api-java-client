@@ -5,6 +5,7 @@ import com.base.api.request.Pagination;
 import com.base.api.response.info.common.GetCargoDescriptionList;
 import com.base.api.response.info.common.GetCargoTypes;
 import com.base.api.response.info.common.GetMessageCodeText;
+import com.base.api.response.info.common.GetOwnershipFormsList;
 import com.base.api.response.info.common.GetPalletsList;
 import com.base.api.response.info.common.GetServiceTypes;
 import com.base.api.response.info.common.GetTiresWheelsList;
@@ -93,6 +94,12 @@ public class Common_ServiceTest extends TestCase {
         info.getData().forEach(System.out::println);
     }
 
-    public void testGetOwnershipFormsList() {
+    public void testGetOwnershipFormsList() throws IOException {
+
+        GetOwnershipFormsList info = service.getOwnershipFormsList(API_KEY);
+
+        System.out.println(info.getStatusResponse());
+
+        info.getData().forEach(System.out::println);
     }
 }
