@@ -4,6 +4,7 @@ import com.base.api.mainservice.Common_Service;
 import com.base.api.request.Pagination;
 import com.base.api.response.info.common.GetCargoDescriptionList;
 import com.base.api.response.info.common.GetCargoTypes;
+import com.base.api.response.info.common.GetMessageCodeText;
 import com.base.api.response.info.common.GetPalletsList;
 import com.base.api.response.info.common.GetTiresWheelsList;
 import com.base.api.response.info.common.GetTypesOfPayersForRedelivery;
@@ -75,7 +76,11 @@ public class Common_ServiceTest extends TestCase {
         info.getData().forEach(System.out::println);
     }
 
-    public void testGetMessageCodeText() {
+    public void testGetMessageCodeText() throws IOException {
+        GetMessageCodeText info = service.getMessageCodeText(API_KEY);
+
+        System.out.println(info.getStatusResponse());
+        info.getData().forEach(System.out::println);
     }
 
     public void testGetServiceTypes() {
