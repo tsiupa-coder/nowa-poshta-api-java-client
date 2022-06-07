@@ -33,7 +33,7 @@ public class Address_ServiceTest  {
         info.getData().get(0).getAddresses().forEach(System.out::println);
     }
 
-
+    @Test
     public void test_find_address() throws IOException {
         Pagination pagination = new Pagination();
         pagination.setLimit(100);
@@ -47,7 +47,7 @@ public class Address_ServiceTest  {
 
         info.getData().get(0).getAddresses().forEach(System.out::println);
     }
-
+    @Test
     public void test_create_address() throws IOException {
         SimpleAddress address = new SimpleAddress();
         address.setCounterpartyRef("e71abb60-4b33-11e4-ab6d-005056801329");  // TODO: 02.05.22 set correct id "контергагент"
@@ -65,7 +65,7 @@ public class Address_ServiceTest  {
         // TODO: 02.05.22 Counterparty doesn't exists, Street doesn't exists, Note too long
     }
 
-
+    @Test
     public void test_findSettlement() throws IOException {
         SimpleSettlement simpleSettlement = new SimpleSettlement();
         simpleSettlement.setFindByString("vervevr");
@@ -76,7 +76,7 @@ public class Address_ServiceTest  {
         service.findSettlement(simpleSettlement, pagination, API_KEY);
     }
 
-
+    @Test
     public void test_getRegions() throws IOException {
 
         GetRegions info = service.getRegions(API_KEY);
@@ -84,7 +84,7 @@ public class Address_ServiceTest  {
         info.getData().forEach(System.out::println);
 
     }
-
+    @Test
     public void test_getWarehouseTypes() throws IOException {
 
         GetWarehouseTypes info = service.getWarehouseTypes(API_KEY);
