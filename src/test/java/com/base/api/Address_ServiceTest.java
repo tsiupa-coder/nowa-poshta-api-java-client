@@ -10,21 +10,17 @@ import com.base.api.response.info.address.city.GetCity;
 import com.base.api.mainservice.Address_Service;
 import com.base.api.response.info.address.department.GetWarehouseTypes;
 import com.base.api.response.info.address.regions.GetRegions;
-import junit.framework.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class Address_ServiceTest extends TestCase {
+public class Address_ServiceTest  {
 
-    private Address_Service service;
+    private Address_Service service = new Address_Service();
 
     private final String API_KEY = "64db4746458023076ed38c878a0b398f";
 
-    @Override
-    public void setUp() throws Exception {
-        service = new Address_Service();
-    }
+
 
     @Test
     public void test_get_City() throws IOException {
