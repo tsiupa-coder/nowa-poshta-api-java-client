@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
+
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CheckPossibilityCreateReturn extends Response {

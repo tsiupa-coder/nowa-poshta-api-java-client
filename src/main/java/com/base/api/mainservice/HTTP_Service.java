@@ -24,7 +24,7 @@ import java.io.IOException;
 class HTTP_Service {
 
     public static final String APPLICATION_JSON = "application/json";
-    private static int timeout = 10;
+    private static final int timeout = 10;
 
     public GeneralResponse getRequest(String URL) throws IOException {
 
@@ -52,7 +52,7 @@ class HTTP_Service {
             String json = gson.toJson(o);
             StringEntity entityJson = new StringEntity(json, ContentType.APPLICATION_JSON);
             request.setEntity(entityJson);
-            System.out.println(json);
+//            System.out.println(json);
             return execute(httpclient, request);
         }
     }
@@ -80,7 +80,7 @@ class HTTP_Service {
             if (entity != null) {
                 result = EntityUtils.toString(entity);
                 generalResponse.setEntity(result);
-                System.out.println(result);
+//                System.out.println(result);
             }
             StatusLine statusLine = response.getStatusLine();
             if (statusLine != null) {

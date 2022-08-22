@@ -244,6 +244,4 @@ public class Address_Service extends Service {
                 .postRequest(URL, jsonObject)
                 .getResponse(new GetStreet());
     }
-
-
 }

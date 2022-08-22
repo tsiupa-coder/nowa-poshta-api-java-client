@@ -23,7 +23,6 @@ public class ContactPersonService extends Service {
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateContactPerson());
-
     }
 
     public CreateContactPerson update(PersonData person, String api_key) throws IOException {
@@ -33,7 +32,6 @@ public class ContactPersonService extends Service {
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new CreateContactPerson());
-
     }
 
     public DeleteContactPerson deleteContactPerson(String ref, String api_key) throws IOException {
@@ -44,6 +42,5 @@ public class ContactPersonService extends Service {
         return service
                 .postRequest(URL, jsonObject)
                 .getResponse(new DeleteContactPerson());
-
     }
 }

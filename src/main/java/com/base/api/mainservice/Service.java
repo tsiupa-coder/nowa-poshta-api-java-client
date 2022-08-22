@@ -12,6 +12,4 @@ public class Service {
         service = new HTTP_Service();
         jsonService = new JsonService();
     }
-
-
 }

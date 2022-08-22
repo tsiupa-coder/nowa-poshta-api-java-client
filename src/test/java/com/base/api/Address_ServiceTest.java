@@ -18,9 +18,7 @@ public class Address_ServiceTest  {
 
     private Address_Service service = new Address_Service();
 
-    private final String API_KEY = "64db4746458023076ed38c878a0b398f";
-
-
+    private final String API_KEY = System.getenv("API_KEY");
 
     @Test
     public void test_get_City() throws IOException {

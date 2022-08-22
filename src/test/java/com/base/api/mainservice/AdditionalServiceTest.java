@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdditionalServiceTest {
 
     AdditionalService service = new AdditionalService();
-    private final String API_KEY = "64db4746458023076ed38c878a0b398f";
+    private final String API_KEY = System.getenv("API_KEY");
     @Test
     void checkPossibilityCreateReturn() throws IOException {
         CheckPossibilityCreateReturn info = service.checkPossibilityCreateReturn("1", API_KEY);

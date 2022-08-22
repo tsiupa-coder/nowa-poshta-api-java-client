@@ -17,7 +17,7 @@ import java.io.IOException;
 public class Common_ServiceTest  {
 
     Common_Service service = new Common_Service();
-    private final String API_KEY = "64db4746458023076ed38c878a0b398f";
+    private final String API_KEY = System.getenv("API_KEY");
     public void testGetTimeIntervals() {
 
     }

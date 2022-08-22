@@ -69,7 +69,7 @@ public class AdditionalService extends Service {
 
     public GetReturnOrdersList getReturnOrdersList(ListRequest request, String api_key) throws IOException {
 
-        JsonObject  wrapper = jsonService.toObject(request, api_key, ADDITIONAL_SERVICE, GET_RETURN_ORDERS_LIST);
+        JsonObject wrapper = jsonService.toObject(request, api_key, ADDITIONAL_SERVICE, GET_RETURN_ORDERS_LIST);
 
         return service
                 .postRequest(URL, wrapper)
@@ -89,7 +89,7 @@ public class AdditionalService extends Service {
                 .getResponse(new DeleteAdditionalService());
     }
 
-    public  CheckPossibilityChangeEW checkPossibilityChangeEW (String intDocNumber, String api_key) throws IOException {
+    public CheckPossibilityChangeEW checkPossibilityChangeEW(String intDocNumber, String api_key) throws IOException {
 
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty(INT_DOC_NUMBER, intDocNumber);
@@ -103,7 +103,7 @@ public class AdditionalService extends Service {
 
     public GetChangeEWOrdersList getChangeEWOrdersList(ListRequest request, String api_key) throws IOException {
 
-        JsonObject  wrapper = jsonService.toObject(request, api_key, ADDITIONAL_SERVICE, GET_CHANGE_EW_ORDERS_LIST);
+        JsonObject wrapper = jsonService.toObject(request, api_key, ADDITIONAL_SERVICE, GET_CHANGE_EW_ORDERS_LIST);
 
         return service
                 .postRequest(URL, wrapper)
@@ -124,7 +124,7 @@ public class AdditionalService extends Service {
 
     public GetRedirectionOrdersList getRedirectionOrdersList(ListRequest request, String api_key) throws IOException {
 
-        JsonObject  wrapper = jsonService.toObject(request, api_key, ADDITIONAL_SERVICE, GET_REDIRECTION_ORDERS_LIST);
+        JsonObject wrapper = jsonService.toObject(request, api_key, ADDITIONAL_SERVICE, GET_REDIRECTION_ORDERS_LIST);
 
         return service
                 .postRequest(URL, wrapper)

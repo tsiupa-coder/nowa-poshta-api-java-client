@@ -24,8 +24,6 @@ import static com.base.api.model.StringConstants.UPDATE;
 
 public class CounterpartyService extends Service {
 
-
-
     public UpdateCounterparty update(SimpleCounterparty counterparty, String api_key) throws IOException {
 
         JsonObject jsonObject = jsonService.toObject(counterparty, api_key, COUNTERPARTY, UPDATE);
